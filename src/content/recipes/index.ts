@@ -171,7 +171,7 @@ export const recipes: Recipe[] = [
     rating: 4.8,
     tags: ["No-Cook", "Meal Prep"],
     image:
-      "https://images.unsplash.com/photo-1511690743698-d9d18f7e20f1?w=600&h=400&fit=crop",
+      "https://images.unsplash.com/photo-1671527281209-7b3a8dff51ce?w=600&h=400&fit=crop",
     ingredients: [
       "1/3 cup chia seeds",
       "1 cup coconut milk (full fat for creamiest result)",

@@ -59,7 +59,7 @@ export const dietPlans: DietPlan[] = [
     duration: "30 Days",
     icon: "💪",
     image:
-      "https://images.unsplash.com/photo-1505576399279-0d06b1398e31?w=600&h=400&fit=crop",
+      "https://images.unsplash.com/photo-1490645935967-10de6ba17061?w=600&h=400&fit=crop",
     highlights: [
       "80-120g plant protein daily",
       "Pre and post-workout meal timing",
