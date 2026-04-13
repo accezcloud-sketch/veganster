@@ -1,9 +1,8 @@
 import type { Metadata } from "next";
-import Image from "next/image";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import PageHeader from "@/components/PageHeader";
-import { dietPlans } from "@/content/diet-plans";
+import DietPlanGrid from "@/components/DietPlanGrid";
 
 export const metadata: Metadata = {
   title: "Diet Plans — Veganster",
@@ -25,66 +24,7 @@ export default function DietPlansPage() {
 
       <section className="py-20 bg-cream">
         <div className="max-w-7xl mx-auto px-6">
-          {/* Category filters */}
-          <div className="flex flex-wrap gap-3 mb-12 justify-center">
-            {[
-              "All",
-              "Detox",
-              "Fitness",
-              "Healing",
-              "Digestive",
-              "Energy",
-              "Weight Loss",
-            ].map((cat) => (
-              <span
-                key={cat}
-                className={`px-5 py-2 rounded-full text-sm font-medium cursor-pointer transition-colors ${
-                  cat === "All"
-                    ? "bg-forest text-white"
-                    : "bg-white text-warm-gray hover:bg-forest/10 hover:text-forest"
-                }`}
-              >
-                {cat}
-              </span>
-            ))}
-          </div>
-
-          {/* Plans grid */}
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
-            {dietPlans.map((plan) => (
-              <article
-                key={plan.slug}
-                className="group bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-lg transition-shadow"
-              >
-                <div className="relative h-52 overflow-hidden">
-                  <Image
-                    src={plan.image}
-                    alt={plan.title}
-                    fill
-                    className="object-cover group-hover:scale-105 transition-transform duration-500"
-                  />
-                  <span className="absolute top-4 left-4 text-xs font-semibold px-3 py-1 bg-white/90 text-forest rounded-full">
-                    {plan.category}
-                  </span>
-                  <span className="absolute top-4 right-4 text-xs font-semibold px-3 py-1 bg-forest/90 text-white rounded-full">
-                    {plan.duration}
-                  </span>
-                </div>
-                <div className="p-6 text-center">
-                  <div className="text-4xl mb-4">{plan.icon}</div>
-                  <h3 className="font-[family-name:var(--font-playfair)] text-xl font-semibold text-charcoal mb-3">
-                    {plan.title}
-                  </h3>
-                  <p className="text-warm-gray text-sm leading-relaxed mb-5">
-                    {plan.excerpt}
-                  </p>
-                  <span className="inline-block px-6 py-2.5 bg-forest text-white text-sm font-semibold rounded-full hover:bg-forest-light transition-colors cursor-pointer">
-                    Start Plan
-                  </span>
-                </div>
-              </article>
-            ))}
-          </div>
+          <DietPlanGrid />
         </div>
       </section>
 

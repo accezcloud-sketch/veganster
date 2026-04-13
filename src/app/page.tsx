@@ -175,7 +175,7 @@ export default function Home() {
                   <h3 className="font-[family-name:var(--font-playfair)] text-xl font-semibold mb-2">
                     {juice.title}
                   </h3>
-                  <p className="text-sm text-white/60">{juice.ingredients}</p>
+                  <p className="text-sm text-white/60">{juice.ingredients.map((ing) => ing.item).join(", ")}</p>
                 </div>
               </article>
             ))}
