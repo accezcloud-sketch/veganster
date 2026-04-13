@@ -4,11 +4,11 @@ import { useState } from "react";
 import Link from "next/link";
 
 const navLinks = [
-  { href: "#recipes", label: "Recipes" },
-  { href: "#juice-pharmacy", label: "Juice Pharmacy" },
-  { href: "#diet-plans", label: "Diet Plans" },
-  { href: "#blog", label: "Blog" },
-  { href: "#about", label: "About" },
+  { href: "/recipes", label: "Recipes" },
+  { href: "/juice-pharmacy", label: "Juice Pharmacy" },
+  { href: "/diet-plans", label: "Diet Plans" },
+  { href: "/blog", label: "Blog" },
+  { href: "/about", label: "About" },
 ];
 
 export default function Header() {
@@ -27,13 +27,13 @@ export default function Header() {
         {/* Desktop nav */}
         <nav className="hidden md:flex items-center gap-8">
           {navLinks.map((link) => (
-            <a
+            <Link
               key={link.href}
               href={link.href}
               className="text-sm font-medium text-warm-gray hover:text-forest transition-colors"
             >
               {link.label}
-            </a>
+            </Link>
           ))}
         </nav>
 
@@ -72,14 +72,14 @@ export default function Header() {
       {mobileOpen && (
         <nav className="md:hidden bg-cream border-t border-cream-dark px-6 py-4 space-y-3">
           {navLinks.map((link) => (
-            <a
+            <Link
               key={link.href}
               href={link.href}
               onClick={() => setMobileOpen(false)}
               className="block text-sm font-medium text-warm-gray hover:text-forest transition-colors"
             >
               {link.label}
-            </a>
+            </Link>
           ))}
         </nav>
       )}
