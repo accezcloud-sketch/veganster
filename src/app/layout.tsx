@@ -12,10 +12,37 @@ const inter = Inter({
   variable: "--font-inter",
 });
 
+const siteUrl =
+  process.env.NEXT_PUBLIC_SITE_URL ?? "https://veganster.example.com";
+
 export const metadata: Metadata = {
-  title: "Veganster — Plant-Based Living & Wellness",
+  metadataBase: new URL(siteUrl),
+  title: {
+    default: "Veganster — Plant-Based Living & Wellness",
+    template: "%s — Veganster",
+  },
   description:
     "Discover delicious vegan recipes, healing juice blends, wellness programs, and plant-based living inspiration at Veganster.",
+  openGraph: {
+    type: "website",
+    siteName: "Veganster",
+    locale: "en_US",
+    url: "/",
+    title: "Veganster — Plant-Based Living & Wellness",
+    description:
+      "Discover delicious vegan recipes, healing juice blends, wellness programs, and plant-based living inspiration at Veganster.",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Veganster — Plant-Based Living & Wellness",
+    description:
+      "Discover delicious vegan recipes, healing juice blends, wellness programs, and plant-based living inspiration at Veganster.",
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: { index: true, follow: true, "max-image-preview": "large" },
+  },
 };
 
 export default function RootLayout({

@@ -5,9 +5,35 @@ import PageHeader from "@/components/PageHeader";
 import BlogGrid from "@/components/BlogGrid";
 
 export const metadata: Metadata = {
-  title: "Blog — Veganster",
+  title: "Blog",
   description:
     "Health tips, nutrition science, and plant-based lifestyle articles to inspire your wellness journey.",
+  alternates: { canonical: "/blog" },
+  openGraph: {
+    type: "website",
+    url: "/blog",
+    title: "Veganster Blog — Plant-Based Wellness Articles",
+    description:
+      "Health tips, nutrition science, and plant-based lifestyle articles to inspire your wellness journey.",
+    siteName: "Veganster",
+    images: [
+      {
+        url: "https://images.unsplash.com/photo-1498837167922-ddd27525d352?w=1200&h=630&fit=crop&fm=webp&q=80",
+        width: 1200,
+        height: 630,
+        alt: "Colorful plant-based bowl on a wooden table",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Veganster Blog — Plant-Based Wellness Articles",
+    description:
+      "Health tips, nutrition science, and plant-based lifestyle articles to inspire your wellness journey.",
+    images: [
+      "https://images.unsplash.com/photo-1498837167922-ddd27525d352?w=1200&h=630&fit=crop&fm=webp&q=80",
+    ],
+  },
 };
 
 export default function BlogPage() {

@@ -4,7 +4,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import { blogPosts } from "@/content/blog";
+import { blogPosts, estimateReadTime } from "@/content/blog";
 
 export async function generateStaticParams() {
   return blogPosts.map((post) => ({ slug: post.slug }));
@@ -18,10 +18,82 @@ export async function generateMetadata({
   const { slug } = await params;
   const post = blogPosts.find((p) => p.slug === slug);
   if (!post) return {};
+
+  const url = `/blog/${post.slug}`;
+  const description = post.description ?? post.excerpt;
+
   return {
-    title: `${post.title} — Veganster Blog`,
-    description: post.excerpt,
+    title: post.title,
+    description,
+    keywords: post.tags,
+    authors: [{ name: post.author }],
+    alternates: { canonical: url },
+    openGraph: {
+      type: "article",
+      url,
+      title: post.title,
+      description,
+      siteName: "Veganster",
+      locale: "en_US",
+      publishedTime: post.dateISO,
+      authors: [post.author],
+      tags: post.tags,
+      images: [
+        {
+          url: post.image,
+          width: 1200,
+          height: 800,
+          alt: post.imageAlt,
+        },
+      ],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: post.title,
+      description,
+      images: [post.image],
+    },
   };
+}
+
+// Renders inline markdown links [text](url) as anchor tags.
+function renderInline(text: string) {
+  const parts: React.ReactNode[] = [];
+  const pattern = /\[([^\]]+)\]\(([^)]+)\)/g;
+  let lastIndex = 0;
+  let match: RegExpExecArray | null;
+  let key = 0;
+  while ((match = pattern.exec(text)) !== null) {
+    if (match.index > lastIndex) {
+      parts.push(text.slice(lastIndex, match.index));
+    }
+    const [, label, href] = match;
+    const internal = href.startsWith("/");
+    parts.push(
+      internal ? (
+        <Link
+          key={key++}
+          href={href}
+          className="text-forest underline underline-offset-2 hover:text-forest-light"
+        >
+          {label}
+        </Link>
+      ) : (
+        <a
+          key={key++}
+          href={href}
+          className="text-forest underline underline-offset-2 hover:text-forest-light"
+          rel="noopener noreferrer"
+          target="_blank"
+        >
+          {label}
+        </a>
+      ),
+    );
+    lastIndex = match.index + match[0].length;
+  }
+  if (lastIndex < text.length) parts.push(text.slice(lastIndex));
+  return parts;
 }
 
 export default async function BlogPostPage({
@@ -35,9 +107,48 @@ export default async function BlogPostPage({
   if (!post) notFound();
 
   const related = blogPosts.filter((p) => p.slug !== slug).slice(0, 3);
+  const readTime = estimateReadTime(post);
+  const siteUrl =
+    process.env.NEXT_PUBLIC_SITE_URL ?? "https://veganster.example.com";
+  const postUrl = `${siteUrl}/blog/${post.slug}`;
+
+  const articleJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    headline: post.title,
+    description: post.description ?? post.excerpt,
+    image: [post.image],
+    datePublished: post.dateISO,
+    dateModified: post.dateISO,
+    author: [
+      {
+        "@type": "Person",
+        name: post.author,
+      },
+    ],
+    publisher: {
+      "@type": "Organization",
+      name: "Veganster",
+      logo: {
+        "@type": "ImageObject",
+        url: `${siteUrl}/icon.png`,
+      },
+    },
+    mainEntityOfPage: {
+      "@type": "WebPage",
+      "@id": postUrl,
+    },
+    keywords: post.tags.join(", "),
+    articleSection: post.category,
+  };
 
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd) }}
+      />
+
       <Header />
 
       {/* Hero */}
@@ -45,7 +156,7 @@ export default async function BlogPostPage({
         <div className="relative h-72 md:h-[28rem] overflow-hidden">
           <Image
             src={post.image}
-            alt={post.title}
+            alt={post.imageAlt}
             fill
             priority
             sizes="100vw"
@@ -63,9 +174,9 @@ export default async function BlogPostPage({
               <div className="flex items-center gap-4 text-white/70 text-sm">
                 <span>By {post.author}</span>
                 <span>·</span>
-                <span>{post.date}</span>
+                <time dateTime={post.dateISO}>{post.date}</time>
                 <span>·</span>
-                <span>{post.readTime}</span>
+                <span>{readTime}</span>
               </div>
             </div>
           </div>
@@ -76,7 +187,6 @@ export default async function BlogPostPage({
       <section className="py-16 bg-cream">
         <article className="max-w-3xl mx-auto px-6">
           {post.content.map((block, i) => {
-            // Check if block starts with ## heading
             if (block.startsWith("## ")) {
               const parts = block.split("\n\n");
               const heading = parts[0].replace("## ", "");
@@ -88,7 +198,7 @@ export default async function BlogPostPage({
                   </h2>
                   {body && (
                     <p className="text-warm-gray leading-relaxed text-lg">
-                      {body}
+                      {renderInline(body)}
                     </p>
                   )}
                 </div>
@@ -99,7 +209,7 @@ export default async function BlogPostPage({
                 key={i}
                 className="text-warm-gray leading-relaxed text-lg mb-8"
               >
-                {block}
+                {renderInline(block)}
               </p>
             );
           })}
@@ -142,7 +252,7 @@ export default async function BlogPostPage({
                   <div className="relative h-48 overflow-hidden">
                     <Image
                       src={p.image}
-                      alt={p.title}
+                      alt={p.imageAlt}
                       fill
                       sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 400px"
                       className="object-cover group-hover:scale-105 transition-transform duration-500"
@@ -156,7 +266,7 @@ export default async function BlogPostPage({
                       {p.title}
                     </h3>
                     <span className="text-xs text-warm-gray-light mt-1 block">
-                      {p.readTime}
+                      {estimateReadTime(p)}
                     </span>
                   </div>
                 </article>
