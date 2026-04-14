@@ -1,4 +1,6 @@
 import Link from "next/link";
+import Image from "next/image";
+import logo from "../../public/veganster_logo.png";
 import NewsletterForm from "./NewsletterForm";
 
 export default function Footer() {
@@ -25,9 +27,14 @@ export default function Footer() {
             <div>
               <Link
                 href="/"
-                className="font-[family-name:var(--font-playfair)] text-2xl font-bold text-white"
+                className="flex items-center gap-2 font-[family-name:var(--font-playfair)] text-2xl font-bold text-white"
               >
-                Veganster
+                <Image
+                  src={logo}
+                  alt="Veganster logo"
+                  className="h-10 w-auto"
+                />
+                <span>Veganster</span>
               </Link>
               <p className="mt-4 text-sm leading-relaxed">
                 Plant-based recipes, healing juices, and wellness programs for a

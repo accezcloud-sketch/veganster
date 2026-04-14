@@ -2,6 +2,8 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
+import logo from "../../public/veganster_logo.png";
 
 const navLinks = [
   { href: "/recipes", label: "Recipes" },
@@ -19,9 +21,15 @@ export default function Header() {
       <div className="max-w-7xl mx-auto px-6 flex items-center justify-between h-16">
         <Link
           href="/"
-          className="font-[family-name:var(--font-playfair)] text-2xl font-bold text-forest tracking-tight"
+          className="flex items-center gap-2 font-[family-name:var(--font-playfair)] text-2xl font-bold text-forest tracking-tight"
         >
-          Veganster
+          <Image
+            src={logo}
+            alt="Veganster logo"
+            priority
+            className="h-10 w-auto"
+          />
+          <span>Veganster</span>
         </Link>
 
         {/* Desktop nav */}
