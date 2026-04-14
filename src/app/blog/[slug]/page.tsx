@@ -48,6 +48,7 @@ export default async function BlogPostPage({
             alt={post.title}
             fill
             priority
+            sizes="100vw"
             className="object-cover"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-charcoal/80 via-charcoal/30 to-transparent" />
@@ -143,6 +144,7 @@ export default async function BlogPostPage({
                       src={p.image}
                       alt={p.title}
                       fill
+                      sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 400px"
                       className="object-cover group-hover:scale-105 transition-transform duration-500"
                     />
                   </div>

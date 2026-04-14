@@ -50,6 +50,7 @@ export default async function JuiceDetailPage({
             alt={juice.title}
             fill
             priority
+            sizes="100vw"
             className="object-cover"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-forest-dark/80 via-forest-dark/30 to-transparent" />
@@ -170,6 +171,7 @@ export default async function JuiceDetailPage({
                       src={j.image}
                       alt={j.title}
                       fill
+                      sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 400px"
                       className="object-cover group-hover:scale-105 transition-transform duration-500"
                     />
                   </div>

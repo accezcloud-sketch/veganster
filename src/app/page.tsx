@@ -38,6 +38,7 @@ export default function Home() {
             alt="Colorful plant-based meal spread"
             fill
             priority
+            sizes="100vw"
             className="object-cover"
           />
           <div className="absolute inset-0 bg-gradient-to-r from-charcoal/80 via-charcoal/50 to-transparent" />
@@ -99,6 +100,7 @@ export default function Home() {
                     src={recipe.image}
                     alt={recipe.title}
                     fill
+                    sizes="(max-width: 768px) 100vw, (max-width: 1280px) 50vw, 400px"
                     className="object-cover group-hover:scale-105 transition-transform duration-500"
                   />
                 </div>
@@ -165,6 +167,7 @@ export default function Home() {
                     src={juice.image}
                     alt={juice.title}
                     fill
+                    sizes="(max-width: 768px) 100vw, (max-width: 1280px) 50vw, 400px"
                     className="object-cover"
                   />
                 </div>
@@ -265,6 +268,7 @@ export default function Home() {
                     src={post.image}
                     alt={post.title}
                     fill
+                    sizes="(max-width: 640px) 192px, (max-width: 768px) 100vw, 50vw"
                     className="object-cover group-hover:scale-105 transition-transform duration-500"
                   />
                 </div>

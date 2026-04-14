@@ -22,6 +22,7 @@ export default function AboutPage() {
             alt="Fresh vegetables and herbs on a wooden table"
             fill
             priority
+            sizes="100vw"
             className="object-cover"
           />
           <div className="absolute inset-0 bg-charcoal/60" />
@@ -67,6 +68,7 @@ export default function AboutPage() {
                 src="https://images.unsplash.com/photo-1457296898342-cdd24585d095?w=600&h=500&fit=crop"
                 alt="Colorful plant-based ingredients"
                 fill
+                sizes="(max-width: 768px) 100vw, 50vw"
                 className="object-cover"
               />
             </div>
@@ -172,6 +174,7 @@ export default function AboutPage() {
                     src={offer.image}
                     alt={offer.title}
                     fill
+                    sizes="160px"
                     className="object-cover group-hover:scale-105 transition-transform duration-500"
                   />
                 </div>
