@@ -1,5 +1,5 @@
 ---
-title: Unlock Your Best Health: The Benefits of a Whole Food Plant-Based Diet for Beginners
+title: "Unlock Your Best Health: The Benefits of a Whole Food Plant-Based Diet for Beginners"
 excerpt: Discover how embracing whole, unprocessed plant foods can revolutionize your health and well-being, even if you're new to plant-based eating.
 date: "2026-04-26"
 author: Dr. Sarah Chen
