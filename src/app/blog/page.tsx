@@ -3,6 +3,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import PageHeader from "@/components/PageHeader";
 import BlogGrid from "@/components/BlogGrid";
+import { getAllPosts } from "@/lib/blog";
 
 export const metadata: Metadata = {
   title: "Blog",
@@ -37,6 +38,8 @@ export const metadata: Metadata = {
 };
 
 export default function BlogPage() {
+  const posts = getAllPosts();
+
   return (
     <>
       <Header />
@@ -50,7 +53,7 @@ export default function BlogPage() {
 
       <section className="py-20 bg-cream">
         <div className="max-w-7xl mx-auto px-6">
-          <BlogGrid />
+          <BlogGrid posts={posts} />
         </div>
       </section>
 

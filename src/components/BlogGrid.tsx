@@ -3,17 +3,15 @@
 import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { blogPosts } from "@/content/blog";
+import type { BlogPost } from "@/lib/blog";
 
 const categories = ["All", "Nutrition", "Wellness", "Lifestyle"];
 
-export default function BlogGrid() {
+export default function BlogGrid({ posts }: { posts: BlogPost[] }) {
   const [active, setActive] = useState("All");
 
   const filtered =
-    active === "All"
-      ? blogPosts
-      : blogPosts.filter((p) => p.category === active);
+    active === "All" ? posts : posts.filter((p) => p.category === active);
 
   const featured = filtered[0];
   const rest = filtered.slice(1);
@@ -47,8 +45,8 @@ export default function BlogGrid() {
             <div className="grid md:grid-cols-2">
               <div className="relative h-64 md:h-auto min-h-[16rem] overflow-hidden">
                 <Image
-                  src={featured.image}
-                  alt={featured.imageAlt}
+                  src={featured.coverImage}
+                  alt={featured.coverImageAlt}
                   fill
                   sizes="(max-width: 768px) 100vw, 50vw"
                   className="object-cover group-hover:scale-105 transition-transform duration-500"
@@ -71,7 +69,7 @@ export default function BlogGrid() {
                 </p>
                 <div className="flex items-center justify-between">
                   <span className="text-sm text-warm-gray-light">
-                    {featured.date}
+                    {featured.dateDisplay}
                   </span>
                   <span className="text-forest font-semibold text-sm hover:text-forest-light transition-colors">
                     Read Article →
@@ -95,8 +93,8 @@ export default function BlogGrid() {
               <article className="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-lg transition-shadow h-full">
                 <div className="relative h-48 overflow-hidden">
                   <Image
-                    src={post.image}
-                    alt={post.imageAlt}
+                    src={post.coverImage}
+                    alt={post.coverImageAlt}
                     fill
                     sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 400px"
                     className="object-cover group-hover:scale-105 transition-transform duration-500"
@@ -111,7 +109,7 @@ export default function BlogGrid() {
                       {post.readTime}
                     </span>
                     <span className="text-xs text-warm-gray-light">
-                      {post.date}
+                      {post.dateDisplay}
                     </span>
                   </div>
                   <h3 className="font-[family-name:var(--font-playfair)] text-xl font-semibold text-charcoal mb-2">

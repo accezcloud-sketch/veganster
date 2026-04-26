@@ -1,5 +1,5 @@
 import type { MetadataRoute } from "next";
-import { blogPosts } from "@/content/blog";
+import { getAllPosts } from "@/lib/blog";
 
 const siteUrl =
   process.env.NEXT_PUBLIC_SITE_URL ?? "https://veganster.example.com";
@@ -19,9 +19,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: path === "" ? 1 : 0.7,
   }));
 
-  const postRoutes: MetadataRoute.Sitemap = blogPosts.map((post) => ({
+  const postRoutes: MetadataRoute.Sitemap = getAllPosts().map((post) => ({
     url: `${siteUrl}/blog/${post.slug}`,
-    lastModified: new Date(post.dateISO),
+    lastModified: new Date(post.date),
     changeFrequency: "monthly",
     priority: 0.6,
   }));

@@ -5,7 +5,7 @@ import Footer from "@/components/Footer";
 import { recipes } from "@/content/recipes";
 import { juices } from "@/content/juice-pharmacy";
 import { dietPlans } from "@/content/diet-plans";
-import { blogPosts } from "@/content/blog";
+import { getAllPosts } from "@/lib/blog";
 
 /* ─── Helpers ────────────────────────────────────────────────────────── */
 
@@ -24,7 +24,7 @@ export default function Home() {
   const featuredRecipes = recipes.slice(0, 3);
   const featuredJuices = juices.slice(0, 3);
   const featuredPlans = dietPlans.slice(0, 3);
-  const featuredPosts = blogPosts.slice(0, 2);
+  const featuredPosts = getAllPosts().slice(0, 2);
 
   return (
     <>
@@ -265,8 +265,8 @@ export default function Home() {
               >
                 <div className="relative sm:w-48 h-48 sm:h-auto shrink-0 overflow-hidden">
                   <Image
-                    src={post.image}
-                    alt={post.title}
+                    src={post.coverImage}
+                    alt={post.coverImageAlt}
                     fill
                     sizes="(max-width: 640px) 192px, (max-width: 768px) 100vw, 50vw"
                     className="object-cover group-hover:scale-105 transition-transform duration-500"

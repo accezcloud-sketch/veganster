@@ -4,10 +4,10 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import { blogPosts, estimateReadTime } from "@/content/blog";
+import { getAllPosts, getPostBySlug } from "@/lib/blog";
 
 export async function generateStaticParams() {
-  return blogPosts.map((post) => ({ slug: post.slug }));
+  return getAllPosts().map((post) => ({ slug: post.slug }));
 }
 
 export async function generateMetadata({
@@ -16,15 +16,14 @@ export async function generateMetadata({
   params: Promise<{ slug: string }>;
 }): Promise<Metadata> {
   const { slug } = await params;
-  const post = blogPosts.find((p) => p.slug === slug);
+  const post = getPostBySlug(slug);
   if (!post) return {};
 
   const url = `/blog/${post.slug}`;
-  const description = post.description ?? post.excerpt;
 
   return {
     title: post.title,
-    description,
+    description: post.description,
     keywords: post.tags,
     authors: [{ name: post.author }],
     alternates: { canonical: url },
@@ -32,26 +31,26 @@ export async function generateMetadata({
       type: "article",
       url,
       title: post.title,
-      description,
+      description: post.description,
       siteName: "Veganster",
       locale: "en_US",
-      publishedTime: post.dateISO,
+      publishedTime: post.date,
       authors: [post.author],
       tags: post.tags,
       images: [
         {
-          url: post.image,
+          url: post.coverImage,
           width: 1200,
           height: 800,
-          alt: post.imageAlt,
+          alt: post.coverImageAlt,
         },
       ],
     },
     twitter: {
       card: "summary_large_image",
       title: post.title,
-      description,
-      images: [post.image],
+      description: post.description,
+      images: [post.coverImage],
     },
   };
 }
@@ -102,12 +101,13 @@ export default async function BlogPostPage({
   params: Promise<{ slug: string }>;
 }) {
   const { slug } = await params;
-  const post = blogPosts.find((p) => p.slug === slug);
+  const post = getPostBySlug(slug);
 
   if (!post) notFound();
 
-  const related = blogPosts.filter((p) => p.slug !== slug).slice(0, 3);
-  const readTime = estimateReadTime(post);
+  const related = getAllPosts()
+    .filter((p) => p.slug !== slug)
+    .slice(0, 3);
   const siteUrl =
     process.env.NEXT_PUBLIC_SITE_URL ?? "https://veganster.example.com";
   const postUrl = `${siteUrl}/blog/${post.slug}`;
@@ -116,10 +116,10 @@ export default async function BlogPostPage({
     "@context": "https://schema.org",
     "@type": "Article",
     headline: post.title,
-    description: post.description ?? post.excerpt,
-    image: [post.image],
-    datePublished: post.dateISO,
-    dateModified: post.dateISO,
+    description: post.description,
+    image: [post.coverImage],
+    datePublished: post.date,
+    dateModified: post.date,
     author: [
       {
         "@type": "Person",
@@ -142,6 +142,8 @@ export default async function BlogPostPage({
     articleSection: post.category,
   };
 
+  const blocks = post.content.trim().split(/\n{2,}/);
+
   return (
     <>
       <script
@@ -155,8 +157,8 @@ export default async function BlogPostPage({
       <section className="relative pt-16">
         <div className="relative h-72 md:h-[28rem] overflow-hidden">
           <Image
-            src={post.image}
-            alt={post.imageAlt}
+            src={post.coverImage}
+            alt={post.coverImageAlt}
             fill
             priority
             sizes="100vw"
@@ -174,40 +176,50 @@ export default async function BlogPostPage({
               <div className="flex items-center gap-4 text-white/70 text-sm">
                 <span>By {post.author}</span>
                 <span>·</span>
-                <time dateTime={post.dateISO}>{post.date}</time>
+                <time dateTime={post.date}>{post.dateDisplay}</time>
                 <span>·</span>
-                <span>{readTime}</span>
+                <span>{post.readTime}</span>
               </div>
             </div>
           </div>
         </div>
+        {post.coverImageCredit && (
+          <p className="text-xs text-warm-gray-light text-right max-w-3xl mx-auto px-6 pt-2">
+            Photo:{" "}
+            {post.coverImageCreditUrl ? (
+              <a
+                href={post.coverImageCreditUrl}
+                rel="noopener noreferrer"
+                target="_blank"
+                className="underline underline-offset-2 hover:text-forest"
+              >
+                {post.coverImageCredit}
+              </a>
+            ) : (
+              post.coverImageCredit
+            )}
+          </p>
+        )}
       </section>
 
       {/* Article body */}
       <section className="py-16 bg-cream">
         <article className="max-w-3xl mx-auto px-6">
-          {post.content.map((block, i) => {
+          {blocks.map((block, i) => {
             if (block.startsWith("## ")) {
-              const parts = block.split("\n\n");
-              const heading = parts[0].replace("## ", "");
-              const body = parts.slice(1).join("\n\n");
               return (
-                <div key={i} className="mb-10">
-                  <h2 className="font-[family-name:var(--font-playfair)] text-2xl font-bold text-charcoal mb-4">
-                    {heading}
-                  </h2>
-                  {body && (
-                    <p className="text-warm-gray leading-relaxed text-lg">
-                      {renderInline(body)}
-                    </p>
-                  )}
-                </div>
+                <h2
+                  key={i}
+                  className="font-[family-name:var(--font-playfair)] text-2xl font-bold text-charcoal mb-4 mt-10 first:mt-0"
+                >
+                  {block.replace(/^##\s+/, "")}
+                </h2>
               );
             }
             return (
               <p
                 key={i}
-                className="text-warm-gray leading-relaxed text-lg mb-8"
+                className="text-warm-gray leading-relaxed text-lg mb-6"
               >
                 {renderInline(block)}
               </p>
@@ -251,8 +263,8 @@ export default async function BlogPostPage({
                 <article className="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-lg transition-shadow">
                   <div className="relative h-48 overflow-hidden">
                     <Image
-                      src={p.image}
-                      alt={p.imageAlt}
+                      src={p.coverImage}
+                      alt={p.coverImageAlt}
                       fill
                       sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 400px"
                       className="object-cover group-hover:scale-105 transition-transform duration-500"
@@ -266,7 +278,7 @@ export default async function BlogPostPage({
                       {p.title}
                     </h3>
                     <span className="text-xs text-warm-gray-light mt-1 block">
-                      {estimateReadTime(p)}
+                      {p.readTime}
                     </span>
                   </div>
                 </article>
