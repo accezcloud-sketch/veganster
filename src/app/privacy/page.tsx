@@ -201,19 +201,8 @@ export default function PrivacyPolicyPage() {
             </div>
 
             <div>
-              <h2 className="font-[family-name:var(--font-playfair)] text-2xl md:text-3xl font-bold text-charcoal mb-4">
-                Contact Us
-              </h2>
               <p>
-                Questions about this Privacy Policy or how we handle your
-                information? Reach out anytime at{" "}
-                <a
-                  href="mailto:hello@veganster.com"
-                  className="text-forest font-medium underline hover:text-forest-dark"
-                >
-                  hello@veganster.com
-                </a>
-                . You can also learn more about who we are on our{" "}
+                You can learn more about who we are on our{" "}
                 <Link
                   href="/about"
                   className="text-forest font-medium underline hover:text-forest-dark"
