@@ -262,18 +262,8 @@ export default function TermsOfServicePage() {
             </div>
 
             <div>
-              <h2 className="font-[family-name:var(--font-playfair)] text-2xl md:text-3xl font-bold text-charcoal mb-4">
-                Contact Us
-              </h2>
               <p>
-                Questions about these Terms? Reach out at{" "}
-                <a
-                  href="mailto:hello@veganster.com"
-                  className="text-forest font-medium underline hover:text-forest-dark"
-                >
-                  hello@veganster.com
-                </a>
-                . You can also review our{" "}
+                You can review our{" "}
                 <Link
                   href="/privacy"
                   className="text-forest font-medium underline hover:text-forest-dark"
