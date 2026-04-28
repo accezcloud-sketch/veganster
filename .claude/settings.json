@@ -1,7 +1,10 @@
 {
   "permissions": {
     "allow": [
-      "Bash(grep -E \"^\\(gray-matter|reading-time\\)$\")"
+      "Bash(grep -E \"^\\(gray-matter|reading-time\\)$\")",
+      "Bash(git add *)",
+      "Bash(git commit -m ' *)",
+      "Bash(git push *)"
     ]
   }
 }
