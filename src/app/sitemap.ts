@@ -13,12 +13,16 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/diet-plans",
     "/juice-pharmacy",
     "/privacy",
-  ].map((path) => ({
-    url: `${siteUrl}${path}`,
-    lastModified: new Date(),
-    changeFrequency: path === "/privacy" ? "yearly" : "weekly",
-    priority: path === "" ? 1 : path === "/privacy" ? 0.3 : 0.7,
-  }));
+    "/terms",
+  ].map((path) => {
+    const isLegal = path === "/privacy" || path === "/terms";
+    return {
+      url: `${siteUrl}${path}`,
+      lastModified: new Date(),
+      changeFrequency: isLegal ? ("yearly" as const) : ("weekly" as const),
+      priority: path === "" ? 1 : isLegal ? 0.3 : 0.7,
+    };
+  });
 
   const postRoutes: MetadataRoute.Sitemap = getAllPosts().map((post) => ({
     url: `${siteUrl}/blog/${post.slug}`,
