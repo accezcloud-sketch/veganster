@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
+import ReactMarkdown, { type Components } from "react-markdown";
+import remarkGfm from "remark-gfm";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { getAllPosts, getPostBySlug } from "@/lib/blog";
@@ -55,45 +57,79 @@ export async function generateMetadata({
   };
 }
 
-// Renders inline markdown links [text](url) as anchor tags.
-function renderInline(text: string) {
-  const parts: React.ReactNode[] = [];
-  const pattern = /\[([^\]]+)\]\(([^)]+)\)/g;
-  let lastIndex = 0;
-  let match: RegExpExecArray | null;
-  let key = 0;
-  while ((match = pattern.exec(text)) !== null) {
-    if (match.index > lastIndex) {
-      parts.push(text.slice(lastIndex, match.index));
-    }
-    const [, label, href] = match;
-    const internal = href.startsWith("/");
-    parts.push(
-      internal ? (
-        <Link
-          key={key++}
-          href={href}
-          className="text-forest underline underline-offset-2 hover:text-forest-light"
-        >
-          {label}
+const linkClass =
+  "text-forest underline underline-offset-2 hover:text-forest-light";
+
+const markdownComponents: Components = {
+  h2: ({ children }) => (
+    <h2 className="font-[family-name:var(--font-playfair)] text-2xl font-bold text-charcoal mb-4 mt-10 first:mt-0">
+      {children}
+    </h2>
+  ),
+  h3: ({ children }) => (
+    <h3 className="font-[family-name:var(--font-playfair)] text-xl font-bold text-charcoal mb-3 mt-8">
+      {children}
+    </h3>
+  ),
+  h4: ({ children }) => (
+    <h4 className="font-[family-name:var(--font-playfair)] text-lg font-bold text-charcoal mb-3 mt-6">
+      {children}
+    </h4>
+  ),
+  p: ({ children }) => (
+    <p className="text-warm-gray leading-relaxed text-lg mb-6">{children}</p>
+  ),
+  a: ({ href, children }) => {
+    if (href && href.startsWith("/")) {
+      return (
+        <Link href={href} className={linkClass}>
+          {children}
         </Link>
-      ) : (
-        <a
-          key={key++}
-          href={href}
-          className="text-forest underline underline-offset-2 hover:text-forest-light"
-          rel="noopener noreferrer"
-          target="_blank"
-        >
-          {label}
-        </a>
-      ),
+      );
+    }
+    return (
+      <a
+        href={href}
+        className={linkClass}
+        rel="noopener noreferrer"
+        target="_blank"
+      >
+        {children}
+      </a>
     );
-    lastIndex = match.index + match[0].length;
-  }
-  if (lastIndex < text.length) parts.push(text.slice(lastIndex));
-  return parts;
-}
+  },
+  strong: ({ children }) => (
+    <strong className="font-semibold text-charcoal">{children}</strong>
+  ),
+  em: ({ children }) => <em className="italic">{children}</em>,
+  ul: ({ children }) => (
+    <ul className="list-disc pl-6 mb-6 space-y-2 text-warm-gray text-lg">
+      {children}
+    </ul>
+  ),
+  ol: ({ children }) => (
+    <ol className="list-decimal pl-6 mb-6 space-y-2 text-warm-gray text-lg">
+      {children}
+    </ol>
+  ),
+  li: ({ children }) => <li className="leading-relaxed">{children}</li>,
+  blockquote: ({ children }) => (
+    <blockquote className="border-l-4 border-forest pl-5 my-6 italic text-warm-gray">
+      {children}
+    </blockquote>
+  ),
+  hr: () => <hr className="my-10 border-cream-dark" />,
+  code: ({ children }) => (
+    <code className="bg-cream-dark text-charcoal px-1.5 py-0.5 rounded text-base">
+      {children}
+    </code>
+  ),
+  pre: ({ children }) => (
+    <pre className="bg-charcoal text-cream p-4 rounded-lg overflow-x-auto mb-6 text-sm">
+      {children}
+    </pre>
+  ),
+};
 
 export default async function BlogPostPage({
   params,
@@ -141,8 +177,6 @@ export default async function BlogPostPage({
     keywords: post.tags.join(", "),
     articleSection: post.category,
   };
-
-  const blocks = post.content.trim().split(/\n{2,}/);
 
   return (
     <>
@@ -205,26 +239,12 @@ export default async function BlogPostPage({
       {/* Article body */}
       <section className="py-16 bg-cream">
         <article className="max-w-3xl mx-auto px-6">
-          {blocks.map((block, i) => {
-            if (block.startsWith("## ")) {
-              return (
-                <h2
-                  key={i}
-                  className="font-[family-name:var(--font-playfair)] text-2xl font-bold text-charcoal mb-4 mt-10 first:mt-0"
-                >
-                  {block.replace(/^##\s+/, "")}
-                </h2>
-              );
-            }
-            return (
-              <p
-                key={i}
-                className="text-warm-gray leading-relaxed text-lg mb-6"
-              >
-                {renderInline(block)}
-              </p>
-            );
-          })}
+          <ReactMarkdown
+            remarkPlugins={[remarkGfm]}
+            components={markdownComponents}
+          >
+            {post.content}
+          </ReactMarkdown>
         </article>
       </section>
 
