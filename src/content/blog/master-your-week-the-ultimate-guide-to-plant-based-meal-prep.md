@@ -77,9 +77,7 @@ Invest in good quality, airtight containers. Glass or BPA-free plastic are excel
 
 ### Organizing Your Fridge
 
-Arrange your prepped meals logically. Place items you’ll eat first towards the front. Labeling containers with the date they were prepared and what they contain can also be incredibly helpful. Most prepped meals will stay fresh for 3-4 days.
-
-> According to the USDA, cooked foods should be refrigerated within two hours of cooking to prevent bacterial growth. Aim to consume your prepped meals within 3-4 days for optimal freshness and safety.
+Arrange your prepped meals logically. Place items you’ll eat first towards the front. Labeling containers with the date they were prepared and what they contain can also be incredibly helpful. As a general food-safety rule of thumb, get cooked food into the fridge within two hours of cooking and try to eat your prepped meals within 3–4 days for both freshness and safety.
 
 ## Enjoying Your Effortless Week
 

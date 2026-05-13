@@ -54,8 +54,7 @@ When you're vegan, pay special attention to these nutrients:
 - **Vitamin D:** Crucial for calcium absorption and immune function. Sunlight exposure is a primary source, but fortified foods and supplements are often necessary, especially in less sunny climates.
 - **Omega-3 Fatty Acids:** ALA, an omega-3, is found in flaxseeds, chia seeds, and walnuts. Your body can convert ALA into EPA and DHA, but the conversion rate can be low. Algal oil supplements are a direct vegan source of EPA and DHA.
 - **Iodine:** Important for thyroid function, iodine can be found in sea vegetables and iodized salt.
-
-> "Adequate intake of Vitamin B12 is paramount for all vegans. Due to its absence in most plant foods, regular supplementation or consumption of B12-fortified foods is non-negotiable for long-term health," states the Academy of Nutrition and Dietetics.
+- **Vitamin B12:** Because B12 is absent from most plant foods, this is the one nutrient every vegan should plan around. Look for B12-fortified plant milks, nutritional yeast, or cereals on the label — and if those aren't a regular part of your week, a supplement is the safest fallback.
 
 ### Sodium and Sugar Content
 

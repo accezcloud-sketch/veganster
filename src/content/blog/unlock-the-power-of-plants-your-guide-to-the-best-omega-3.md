@@ -55,8 +55,6 @@ To ensure you're getting enough omega-3s on a plant-based diet, focus on consist
 3.  **Consider Algal Oil**: If you are concerned about your EPA and DHA levels or have specific health goals, an algal oil supplement can be a reliable and direct source. It's recommended to consult with a healthcare professional or registered dietitian to determine the appropriate dosage for your individual needs.
 4.  **Balance Omega-6 Intake**: While omega-6 fatty acids are also essential, the typical Western diet often contains too many. Aim for a balanced ratio of omega-3 to omega-6 by moderating your intake of processed foods and certain vegetable oils high in omega-6.
 
-> "Ensuring adequate intake of omega-3 fatty acids, particularly ALA from plant sources, is achievable and beneficial for overall health. A varied diet rich in seeds and nuts provides a solid foundation," states Dr. Sarah Chen.
-
 By making conscious choices and including these plant-based superstars in your meals, you can harness the incredible power of omega-3s for a vibrant, healthy, and thriving plant-based lifestyle.
 
 Interested in learning more about plant-powered nutrition? Check out these related articles:

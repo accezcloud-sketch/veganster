@@ -22,7 +22,7 @@ The idea that going vegan automatically equates to expensive grocery bills is a 
 
 At its core, a plant-based diet emphasizes staples that are inherently less expensive than many animal products. Think grains, legumes, fruits, and vegetables. These are the building blocks of a nutritious and wallet-friendly vegan lifestyle. The key is to shift your focus from processed vegan substitutes to whole, unprocessed foods. For instance, a kilogram of dried lentils, a powerhouse of protein and fiber, can cost significantly less than a kilogram of meat or even some dairy alternatives.
 
-> "Whole plant foods are often the most cost-effective and nutrient-dense options available," notes registered dietitian and author, Jane Smith. "By prioritizing these staples, you can nourish your body beautifully while saving money."
+Whole, unprocessed plant foods are some of the most cost-effective and nutrient-dense options on the shelf. By building meals around these staples instead of the latest packaged vegan substitute, you can eat well without stretching your grocery budget.
 
 Consider the humble potato: a single potato provides a good source of potassium, vitamin C, and carbohydrates for energy, and it's one of the most affordable vegetables you can buy. Similarly, a large bag of brown rice can cost just a few dollars and yield multiple meals.
 

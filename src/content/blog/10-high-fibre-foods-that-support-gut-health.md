@@ -22,8 +22,6 @@ Did you know that the trillions of microorganisms living in your gut have a prof
 
 Our gut microbiome, a complex ecosystem of bacteria, fungi, and viruses, plays a critical role in digestion, nutrient absorption, and even the production of certain vitamins. A diverse and balanced microbiome is associated with numerous health benefits, including improved immunity and better mental well-being. Fibre, a type of carbohydrate that the body cannot digest, is the **superfood** for these beneficial gut dwellers. It acts as a prebiotic, feeding the good bacteria and helping them flourish.
 
-> "Dietary fibre is crucial for the maintenance of gut barrier function and for immune homeostasis. It influences the composition and activity of the gut microbiota, which in turn affects systemic health," states a review published in the *Journal of Nutritional Biochemistry*.
-
 When we consume enough fibre, we provide the fuel that keeps our gut bacteria happy and productive. These bacteria ferment fibre, producing short-chain fatty acids (SCFAs) like butyrate, which have anti-inflammatory properties and nourish the cells lining our colon. Conversely, a diet low in fibre can lead to an imbalanced gut, potentially contributing to digestive issues and other health concerns.
 
 ## Top 10 High-Fibre Plant Foods for Your Gut
