@@ -72,11 +72,10 @@ export default function RootLayout({
             gtag('config', 'G-X6M89PJQE4', { send_page_view: false });
           `}
         </Script>
-        <Script
+        <script
           async
           src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2065215403709511"
           crossOrigin="anonymous"
-          strategy="beforeInteractive"
         />
       </body>
     </html>
