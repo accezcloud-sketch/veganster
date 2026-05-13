@@ -2,7 +2,7 @@
 title: "Master Your Week: The Ultimate Guide to Plant-Based Meal Prep"
 excerpt: Transform your busy week with efficient and delicious plant-based meal prep strategies.
 date: "2026-05-05"
-author: "Dr. Sarah Chen"
+author: "Veganster Team"
 category: "Lifestyle"
 coverImage: https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=1200&h=800&fit=crop&fm=webp&q=80
 coverImageAlt: "A neatly organized refrigerator filled with colorful containers of prepped plant-based meals, including salads, grain bowls, and cut vegetables."

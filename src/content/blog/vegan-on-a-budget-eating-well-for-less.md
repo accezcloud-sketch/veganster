@@ -2,7 +2,7 @@
 title: "Vegan on a Budget: Eating Well for Less"
 excerpt: Discover how to embrace a vibrant, plant-based lifestyle without breaking the bank with practical tips and budget-friendly strategies.
 date: "2026-05-13"
-author: "Dr. Sarah Chen"
+author: "Veganster Team"
 category: "Lifestyle"
 coverImage: https://images.unsplash.com/photo-1546069901-ba9599a7e63c?w=1200&h=800&fit=crop&fm=webp&q=80
 coverImageAlt: A colourful overhead shot of a kitchen counter filled with fresh produce like bell peppers, broccoli, sweet potatoes, bananas, and apples, alongside a bag of dry lentils and a jar of oats.

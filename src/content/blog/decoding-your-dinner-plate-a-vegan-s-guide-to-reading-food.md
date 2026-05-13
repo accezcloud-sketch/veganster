@@ -2,7 +2,7 @@
 title: "Decoding Your Dinner Plate: A Vegan's Guide to Reading Food Labels"
 excerpt: Navigating food labels as a vegan is crucial for ensuring you're truly enjoying a plant-powered lifestyle.
 date: "2026-04-30"
-author: "Dr. Sarah Chen"
+author: "Veganster Team"
 category: "Nutrition"
 coverImage: https://images.unsplash.com/photo-1493770348161-369560ae357d?w=1200&h=800&fit=crop&fm=webp&q=80
 coverImageAlt: A close-up shot of a person's hands holding a box of pasta, with their thumb pointing to the ingredient list on the back. The lighting is natural and warm, highlighting the text on the label.

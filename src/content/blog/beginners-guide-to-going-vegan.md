@@ -2,7 +2,7 @@
 title: A Beginner's Guide to Going Vegan
 excerpt: Everything you need to know about transitioning to a plant-based lifestyle — from pantry staples to meal planning.
 date: "2026-03-28"
-author: Sarah Mitchell
+author: Veganster Team
 category: Lifestyle
 coverImage: https://images.unsplash.com/photo-1606923829579-0cb981a83e2e?w=1200&h=800&fit=crop&fm=webp&q=80
 coverImageAlt: Person preparing a plant-based meal with fresh vegetables on a marble kitchen counter

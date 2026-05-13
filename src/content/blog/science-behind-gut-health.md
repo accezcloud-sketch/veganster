@@ -2,7 +2,7 @@
 title: The Science Behind Gut Health
 excerpt: How a plant-based diet transforms your microbiome and boosts overall wellness from the inside out.
 date: "2026-04-03"
-author: Dr. James Liu
+author: Veganster Team
 category: Wellness
 coverImage: https://images.unsplash.com/photo-1498837167922-ddd27525d352?w=1200&h=800&fit=crop&fm=webp&q=80
 coverImageAlt: Colorful bowl of plant-based foods with leafy greens, fermented vegetables and seeds

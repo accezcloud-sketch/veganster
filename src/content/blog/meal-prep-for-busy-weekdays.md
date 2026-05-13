@@ -2,7 +2,7 @@
 title: Vegan Meal Prep for Busy Weekdays
 excerpt: Save time and eat well with these batch-cooking strategies and make-ahead recipes for the whole week.
 date: "2026-03-14"
-author: Sarah Mitchell
+author: Veganster Team
 category: Lifestyle
 coverImage: https://images.unsplash.com/photo-1466637574441-749b8f19452f?w=1200&h=800&fit=crop&fm=webp&q=80
 coverImageAlt: Row of glass meal-prep containers filled with grains, roasted vegetables and legumes

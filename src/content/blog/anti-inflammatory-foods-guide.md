@@ -2,7 +2,7 @@
 title: The Ultimate Anti-Inflammatory Foods Guide
 excerpt: Learn which foods fight chronic inflammation and how to build an anti-inflammatory plate every day.
 date: "2026-03-07"
-author: Dr. James Liu
+author: Veganster Team
 category: Wellness
 coverImage: https://images.unsplash.com/photo-1540420773420-3366772f4999?w=1200&h=800&fit=crop&fm=webp&q=80
 coverImageAlt: Plate of anti-inflammatory foods with berries, leafy greens, turmeric, olive oil and nuts

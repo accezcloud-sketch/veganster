@@ -2,7 +2,7 @@
 title: "10 High-Fibre Foods That Support Gut Health"
 excerpt: Discover 10 fibre-rich plant-based foods that are essential for a thriving gut microbiome and overall wellness.
 date: "2026-04-28"
-author: "Dr. Sarah Chen"
+author: "Veganster Team"
 category: "Nutrition"
 coverImage: https://images.unsplash.com/photo-1467003909585-2f8a72700288?w=1200&h=800&fit=crop&fm=webp&q=80
 coverImageAlt: A vibrant, overhead shot of a colorful bowl filled with various plant-based foods, including berries, nuts, seeds, lentils, and leafy greens, arranged artfully on a rustic wooden table.

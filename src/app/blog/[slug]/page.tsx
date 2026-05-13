@@ -158,8 +158,9 @@ export default async function BlogPostPage({
     dateModified: post.date,
     author: [
       {
-        "@type": "Person",
+        "@type": "Organization",
         name: post.author,
+        url: siteUrl,
       },
     ],
     publisher: {
@@ -253,18 +254,17 @@ export default async function BlogPostPage({
         <div className="max-w-3xl mx-auto px-6 py-10">
           <div className="bg-white rounded-2xl p-6 md:p-8 shadow-sm flex flex-col sm:flex-row items-center gap-6">
             <div className="w-16 h-16 rounded-full bg-forest/10 flex items-center justify-center shrink-0">
-              <span className="text-2xl font-bold text-forest">
-                {post.author
-                  .split(" ")
-                  .map((n) => n[0])
-                  .join("")}
-              </span>
+              <span className="text-2xl">🌱</span>
             </div>
             <div>
               <p className="font-semibold text-charcoal">{post.author}</p>
               <p className="text-sm text-warm-gray mt-1">
-                Contributing writer at Veganster, passionate about plant-based
-                nutrition and evidence-based wellness.
+                Articles on this site are written and edited collaboratively by
+                the Veganster team — a small group of plant-based home cooks,
+                nutrition enthusiasts, and wellness writers. We aim for content
+                that is practical, evidence-aware, and honest about its limits.
+                Always consult a qualified professional before making major
+                dietary changes.
               </p>
             </div>
           </div>

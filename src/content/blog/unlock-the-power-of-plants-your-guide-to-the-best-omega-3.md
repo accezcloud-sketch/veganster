@@ -2,7 +2,7 @@
 title: "Unlock the Power of Plants: Your Guide to the Best Omega-3 Sources"
 excerpt: Discover the plant-based champions that will boost your omega-3 intake and support your overall well-being.
 date: "2026-04-30"
-author: "Dr. Sarah Chen"
+author: "Veganster Team"
 category: "Nutrition"
 coverImage: https://images.unsplash.com/photo-1546069901-ba9599a7e63c?w=1200&h=800&fit=crop&fm=webp&q=80
 coverImageAlt: A vibrant overhead shot of a bowl filled with a variety of colorful, healthy plant-based ingredients like chia seeds, flax seeds, walnuts, and leafy greens, artfully arranged for a nutritional meal.

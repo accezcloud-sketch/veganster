@@ -2,7 +2,7 @@
 title: 7 Superfoods You Should Eat Daily
 excerpt: From chia seeds to turmeric — the powerhouse plants that can transform your energy, skin, and immunity.
 date: "2026-03-21"
-author: Dr. Maya Green
+author: Veganster Team
 category: Nutrition
 coverImage: https://images.unsplash.com/photo-1610348725531-843dff563e2c?w=1200&h=800&fit=crop&fm=webp&q=80
 coverImageAlt: Assortment of superfoods including chia seeds, turmeric root, blueberries and leafy greens

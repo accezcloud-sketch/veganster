@@ -2,7 +2,7 @@
 title: "The Truth About Vegan Protein: Complete vs. Incomplete"
 excerpt: Demystifying plant-based protein myths and understanding how to get all essential amino acids on a vegan diet.
 date: "2026-04-28"
-author: "Dr. Maya Green"
+author: "Veganster Team"
 category: Nutrition
 coverImage: https://images.unsplash.com/photo-1498837167922-ddd27525d352?w=1200&h=800&fit=crop&fm=webp&q=80
 coverImageAlt: A vibrant, overhead shot of a colorful and balanced vegan meal, featuring quinoa, black beans, avocado, and leafy greens.

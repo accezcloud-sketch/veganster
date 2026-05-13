@@ -2,7 +2,7 @@
 title: "Unlock Your Best Health: The Benefits of a Whole Food Plant-Based Diet for Beginners"
 excerpt: Discover how embracing whole, unprocessed plant foods can revolutionize your health and well-being, even if you're new to plant-based eating.
 date: "2026-04-26"
-author: Dr. Sarah Chen
+author: Veganster Team
 category: Nutrition
 coverImage: https://images.unsplash.com/photo-1578730260644-8d1b35ce2c69?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5MTcyMDd8MHwxfHNlYXJjaHwxfHx1bmxvY2slMjBoZWFsdGglMjBiZW5lZml0cyUyMHdob2xlfGVufDB8MHx8fDE3NzcyMzc1NzJ8MA&ixlib=rb-4.1.0&q=80&w=1080&w=1200&h=800&fit=crop&fm=webp&q=80
 coverImageAlt: A vibrant and overflowing bowl of fresh, colorful fruits, vegetables, legumes, and whole grains, artfully arranged on a rustic wooden table.

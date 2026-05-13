@@ -2,7 +2,7 @@
 title: 10 Plant Proteins That Beat Meat
 excerpt: Discover the most nutrient-dense plant proteins and how to incorporate them into every meal for optimal health.
 date: "2026-04-08"
-author: Dr. Maya Green
+author: Veganster Team
 category: Nutrition
 coverImage: https://images.unsplash.com/photo-1490818387583-1baba5e638af?w=1200&h=800&fit=crop&fm=webp&q=80
 coverImageAlt: Overhead flat lay of lentils, chickpeas, quinoa, tofu and seeds on a wooden board

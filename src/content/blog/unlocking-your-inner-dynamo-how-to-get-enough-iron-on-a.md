@@ -2,7 +2,7 @@
 title: "Unlocking Your Inner Dynamo: How to Get Enough Iron on a Vegan Diet"
 excerpt: Conquer iron deficiency concerns with this comprehensive guide to plant-based iron sources and absorption boosters.
 date: "2026-04-26"
-author: Dr. Sarah Chen
+author: Veganster Team
 category: Nutrition
 coverImage: https://images.unsplash.com/photo-1498837167922-ddd27525d352?w=1200&h=800&fit=crop&fm=webp&q=80
 coverImageAlt: A vibrant, overhead shot of a colorful vegan meal featuring lentils, spinach, sweet potatoes, and fortified seeds arranged artfully on a rustic wooden table, with a glass of orange juice nearby.
