@@ -227,9 +227,12 @@ export default function Home() {
                 <p className="text-warm-gray leading-relaxed">
                   {plan.excerpt}
                 </p>
-                <span className="inline-block mt-6 text-forest font-semibold hover:text-forest-light transition-colors cursor-pointer">
+                <Link
+                  href={`/diet-plans/${plan.slug}`}
+                  className="inline-block mt-6 text-forest font-semibold hover:text-forest-light transition-colors"
+                >
                   Learn More →
-                </span>
+                </Link>
               </article>
             ))}
           </div>
@@ -282,9 +285,12 @@ export default function Home() {
                   <p className="text-warm-gray text-sm leading-relaxed">
                     {post.excerpt}
                   </p>
-                  <span className="mt-4 text-forest font-semibold text-sm hover:text-forest-light transition-colors cursor-pointer">
+                  <Link
+                    href={`/blog/${post.slug}`}
+                    className="mt-4 text-forest font-semibold text-sm hover:text-forest-light transition-colors"
+                  >
                     Read Article →
-                  </span>
+                  </Link>
                 </div>
               </article>
             ))}

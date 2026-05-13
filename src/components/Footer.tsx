@@ -23,7 +23,7 @@ export default function Footer() {
       {/* Footer */}
       <footer className="bg-charcoal text-white/60 py-16">
         <div className="max-w-7xl mx-auto px-6">
-          <div className="grid md:grid-cols-4 gap-10">
+          <div className="grid md:grid-cols-3 gap-10">
             <div>
               <Link
                 href="/"
@@ -75,6 +75,11 @@ export default function Footer() {
                   </Link>
                 </li>
                 <li>
+                  <Link href="/contact" className="hover:text-white transition-colors">
+                    Contact
+                  </Link>
+                </li>
+                <li>
                   <Link href="/privacy" className="hover:text-white transition-colors">
                     Privacy Policy
                   </Link>
@@ -83,26 +88,6 @@ export default function Footer() {
                   <Link href="/terms" className="hover:text-white transition-colors">
                     Terms of Service
                   </Link>
-                </li>
-              </ul>
-            </div>
-            <div>
-              <h4 className="text-white font-semibold mb-4">Follow Us</h4>
-              <ul className="space-y-2 text-sm">
-                <li>
-                  <a href="#" className="hover:text-white transition-colors">
-                    Instagram
-                  </a>
-                </li>
-                <li>
-                  <a href="#" className="hover:text-white transition-colors">
-                    Pinterest
-                  </a>
-                </li>
-                <li>
-                  <a href="#" className="hover:text-white transition-colors">
-                    YouTube
-                  </a>
                 </li>
               </ul>
             </div>

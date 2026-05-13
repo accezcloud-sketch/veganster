@@ -11,6 +11,7 @@ const navLinks = [
   { href: "/diet-plans", label: "Diet Plans" },
   { href: "/blog", label: "Blog" },
   { href: "/about", label: "About" },
+  { href: "/contact", label: "Contact" },
 ];
 
 export default function Header() {
