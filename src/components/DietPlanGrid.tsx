@@ -7,12 +7,11 @@ import { dietPlans } from "@/content/diet-plans";
 
 const categories = [
   "All",
-  "Detox",
+  "Reset",
   "Fitness",
-  "Healing",
-  "Digestive",
+  "Whole Foods",
+  "Balanced",
   "Energy",
-  "Weight Loss",
 ];
 
 export default function DietPlanGrid() {

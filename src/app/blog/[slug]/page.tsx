@@ -145,7 +145,7 @@ export default async function BlogPostPage({
     .filter((p) => p.slug !== slug)
     .slice(0, 3);
   const siteUrl =
-    process.env.NEXT_PUBLIC_SITE_URL ?? "https://veganster.example.com";
+    process.env.NEXT_PUBLIC_SITE_URL ?? "https://www.veganster.com";
   const postUrl = `${siteUrl}/blog/${post.slug}`;
 
   const articleJsonLd = {

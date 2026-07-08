@@ -5,9 +5,9 @@ import PageHeader from "@/components/PageHeader";
 import JuiceGrid from "@/components/JuiceGrid";
 
 export const metadata: Metadata = {
-  title: "Juice Pharmacy — Veganster",
+  title: "Juices & Smoothies — Veganster",
   description:
-    "Healing smoothies and juice blends crafted for specific health benefits — nature's medicine cabinet.",
+    "Fresh-pressed juices and blended smoothies made with whole fruits, vegetables, and herbs — simple recipes to make at home.",
 };
 
 export default function JuicePharmacyPage() {
@@ -16,9 +16,9 @@ export default function JuicePharmacyPage() {
       <Header />
 
       <PageHeader
-        label="Liquid Healing"
-        title="Juice Pharmacy"
-        description="Nature's medicine cabinet — healing smoothies and juice blends crafted for specific health benefits."
+        label="Fresh & Cold-Pressed"
+        title="Juices & Smoothies"
+        description="Fresh-pressed juices and blended smoothies made with whole fruits, vegetables, and herbs — simple recipes you can make at home."
         image="https://images.unsplash.com/photo-1610970881699-44a5587cabec?w=1600&h=600&fit=crop"
       />
 
@@ -32,13 +32,13 @@ export default function JuicePharmacyPage() {
       <section className="py-20 bg-forest-dark text-white">
         <div className="max-w-4xl mx-auto px-6 text-center">
           <h2 className="font-[family-name:var(--font-playfair)] text-3xl md:text-4xl font-bold mb-6">
-            Why Juice Therapy?
+            Why We Love Fresh Juice
           </h2>
           <p className="text-white/70 leading-relaxed max-w-2xl mx-auto mb-12">
-            Cold-pressed juices deliver concentrated vitamins, minerals, and
-            enzymes directly to your cells. Each blend in our pharmacy is
-            designed to target specific health concerns — from immunity and
-            inflammation to energy and sleep.
+            Freshly pressed juices and blended smoothies are a delicious way to
+            enjoy more fruits, vegetables, and herbs. Every recipe here uses
+            whole ingredients, comes together in minutes, and is built around
+            flavor first.
           </p>
           <div className="grid sm:grid-cols-3 gap-8">
             {[
@@ -53,9 +53,9 @@ export default function JuicePharmacyPage() {
                 desc: "Ready in minutes",
               },
               {
-                stat: "8+",
-                label: "Health Targets",
-                desc: "Blends for every need",
+                stat: "8",
+                label: "Recipes",
+                desc: "A blend for every mood",
               },
             ].map((item) => (
               <div key={item.label}>

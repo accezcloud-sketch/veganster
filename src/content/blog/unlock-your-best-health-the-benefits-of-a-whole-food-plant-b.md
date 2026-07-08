@@ -28,7 +28,7 @@ The evidence supporting a WFPB diet is compelling and continues to grow. By shif
 
 ## Beyond the Physical: Mental and Emotional Well-being
 
-The benefits of a WFPB diet extend far beyond just physical markers. The high fiber content found in fruits, vegetables, and whole grains plays a vital role in **gut health**, feeding beneficial bacteria that influence everything from digestion to mood. A healthier gut microbiome has been linked to reduced inflammation throughout the body, which can positively impact mental well-being. Furthermore, the abundance of antioxidants and phytonutrients in plant foods helps combat oxidative stress, a key contributor to cellular aging and a range of chronic diseases. Many people report experiencing **increased energy levels, clearer skin, and improved mood** when transitioning to a WFPB lifestyle, underscoring the profound connection between what we eat and how we feel, both inside and out.
+The benefits of a WFPB diet extend beyond the plate. The high fiber content found in fruits, vegetables, and whole grains plays a role in **gut health**, feeding the beneficial bacteria that live there. The abundance of antioxidants and phytonutrients in plant foods is one of the reasons so many people enjoy this way of eating. Many also say they simply feel good — with more energy and a renewed enthusiasm for cooking — when they build their meals around whole plant foods, underscoring the connection between what we eat and how we feel.
 
 ## Making the Transition: Simple Steps for Beginners
 
@@ -38,5 +38,6 @@ Starting a WFPB diet doesn't require a complete overhaul overnight. The key is g
 
 A WFPB diet is a celebration of nature's bounty. It encourages culinary exploration and can open your palate to an incredible diversity of flavors and textures. Think creamy avocado toast, hearty lentil shepherd's pie, vibrant stir-fries packed with colorful vegetables, and naturally sweet fruit desserts. The focus shifts from what you're giving up to **all the delicious, nourishing foods you're gaining**. By choosing whole, unprocessed plant foods, you are investing in your long-term health and contributing to a more sustainable planet, all while enjoying some of the most delicious food you've ever eaten.
 
-[10 Plant Proteins That Beat Meat](/blog/10-plant-proteins-that-beat-meat)
-[A Beginner's Guide to Going Vegan](/blog/a-beginners-guide-to-going-vegan)
+Read next:
+- [10 Plant Proteins That Beat Meat](/blog/plant-proteins-that-beat-meat)
+- [A Beginner's Guide to Going Vegan](/blog/beginners-guide-to-going-vegan)

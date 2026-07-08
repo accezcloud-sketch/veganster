@@ -50,11 +50,11 @@ export default function Home() {
           </p>
           <h1 className="font-[family-name:var(--font-playfair)] text-5xl md:text-7xl font-bold text-white leading-tight max-w-2xl">
             Nourish Your Body,{" "}
-            <span className="text-sage-light">Heal With Food</span>
+            <span className="text-sage-light">Love Your Food</span>
           </h1>
           <p className="mt-6 text-lg text-white/80 max-w-xl leading-relaxed">
-            Discover vibrant vegan recipes, healing juice blends, and wellness
-            programs designed to transform your relationship with food.
+            Discover vibrant vegan recipes, fresh juices and smoothies, and
+            simple meal plans that make plant-based eating easy and delicious.
           </p>
           <div className="mt-10 flex flex-wrap gap-4">
             <Link
@@ -64,10 +64,10 @@ export default function Home() {
               Explore Recipes
             </Link>
             <Link
-              href="/juice-pharmacy"
+              href="/juices-and-smoothies"
               className="px-8 py-3.5 border-2 border-white/40 text-white font-semibold rounded-full hover:bg-white/10 transition-colors"
             >
-              Juice Pharmacy
+              Juices & Smoothies
             </Link>
           </div>
         </div>
@@ -140,19 +140,19 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ── Juice Pharmacy ── */}
+      {/* ── Juices & Smoothies ── */}
       <section className="py-24 bg-forest-dark text-white">
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-16">
             <p className="text-sage-light font-medium tracking-widest uppercase text-sm mb-3">
-              Liquid Healing
+              Fresh &amp; Cold-Pressed
             </p>
             <h2 className="font-[family-name:var(--font-playfair)] text-4xl md:text-5xl font-bold">
-              Juice Pharmacy
+              Juices &amp; Smoothies
             </h2>
             <p className="mt-4 text-white/70 max-w-2xl mx-auto">
-              Nature&apos;s medicine cabinet — healing smoothies and juice
-              blends crafted for specific health benefits.
+              Fresh-pressed juices and blended smoothies made with whole fruits,
+              vegetables, and herbs — simple recipes to make at home.
             </p>
           </div>
 
@@ -186,7 +186,7 @@ export default function Home() {
 
           <div className="text-center mt-12">
             <Link
-              href="/juice-pharmacy"
+              href="/juices-and-smoothies"
               className="inline-block px-8 py-3.5 border-2 border-white/40 text-white font-semibold rounded-full hover:bg-white/10 transition-colors"
             >
               View All Blends
@@ -206,8 +206,8 @@ export default function Home() {
               Diet Plans
             </h2>
             <p className="mt-4 text-warm-gray max-w-2xl mx-auto">
-              Structured programs designed by nutritionists to help you thrive
-              on a plant-based lifestyle.
+              Structured plant-based meal plans with day-by-day menus, shopping
+              lists, and simple prep tips.
             </p>
           </div>
 
@@ -317,11 +317,11 @@ export default function Home() {
             What is Veganster?
           </h2>
           <p className="text-lg text-white/80 leading-relaxed max-w-2xl mx-auto">
-            Veganster was born from a simple belief — that the food we eat has
-            the power to heal, energize, and transform our lives. We&apos;re a
-            community of plant-based food lovers, wellness seekers, and kitchen
-            adventurers sharing recipes, knowledge, and inspiration for a
-            healthier, more compassionate world.
+            Veganster was born from a simple belief — that plant-based food can
+            be genuinely delicious, easy to make, and kind to the planet.
+            We&apos;re a community of plant-based food lovers and kitchen
+            adventurers sharing recipes, tips, and inspiration for a more
+            compassionate way of eating.
           </p>
           <Link
             href="/about"

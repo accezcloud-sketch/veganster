@@ -7,7 +7,7 @@ import logo from "../../public/veganster_logo.png";
 
 const navLinks = [
   { href: "/recipes", label: "Recipes" },
-  { href: "/juice-pharmacy", label: "Juice Pharmacy" },
+  { href: "/juices-and-smoothies", label: "Juices & Smoothies" },
   { href: "/diet-plans", label: "Diet Plans" },
   { href: "/blog", label: "Blog" },
   { href: "/about", label: "About" },

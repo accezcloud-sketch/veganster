@@ -19,7 +19,7 @@ export async function generateMetadata({
   const juice = juices.find((j) => j.slug === slug);
   if (!juice) return {};
   return {
-    title: `${juice.title} — Veganster Juice Pharmacy`,
+    title: `${juice.title} — Veganster`,
     description: juice.excerpt,
   };
 }
@@ -134,10 +134,10 @@ export default async function JuiceDetailPage({
                 </ol>
               </div>
 
-              {/* Health Benefits */}
+              {/* Good to Know */}
               <div className="bg-forest-dark/5 rounded-2xl p-8">
                 <h2 className="font-[family-name:var(--font-playfair)] text-2xl font-bold text-charcoal mb-5">
-                  Health Benefits
+                  Good to Know
                 </h2>
                 <ul className="space-y-4">
                   {juice.healthBenefits.map((benefit, i) => (
@@ -160,11 +160,11 @@ export default async function JuiceDetailPage({
       <section className="py-16 bg-cream-dark">
         <div className="max-w-7xl mx-auto px-6">
           <h2 className="font-[family-name:var(--font-playfair)] text-3xl font-bold text-charcoal text-center mb-10">
-            More Healing Blends
+            More Blends to Try
           </h2>
           <div className="grid sm:grid-cols-3 gap-8">
             {related.map((j) => (
-              <Link key={j.slug} href={`/juice-pharmacy/${j.slug}`} className="group">
+              <Link key={j.slug} href={`/juices-and-smoothies/${j.slug}`} className="group">
                 <article className="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-lg transition-shadow">
                   <div className="relative h-48 overflow-hidden">
                     <Image

@@ -2,7 +2,7 @@
 title: "Cracking the B12 Code: Your Essential Guide to Getting Enough on a Plant-Based Diet"
 excerpt: Navigating vitamin B12 on a vegan diet is simpler than you might think with the right knowledge and strategic food choices.
 date: "2026-07-08"
-author: "Dr. Maya Green"
+author: "Veganster Team"
 category: "Nutrition"
 coverImage: https://images.unsplash.com/photo-1564834744159-ff0ea41ba4b9?w=1200&h=800&fit=crop&fm=webp&q=80
 coverImageAlt: A bright and colorful overhead shot of various plant-based foods including fortified cereals, nutritional yeast, leafy greens, and berries, arranged artfully on a wooden table.

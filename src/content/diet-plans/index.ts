@@ -21,22 +21,22 @@ export interface DietPlan {
 
 export const dietPlans: DietPlan[] = [
   {
-    slug: "7-day-reset-cleanse",
-    title: "7-Day Reset Cleanse",
+    slug: "7-day-whole-food-reset",
+    title: "7-Day Whole-Food Reset",
     excerpt:
-      "A gentle whole-food cleanse to reset your gut health, boost energy levels, and kickstart healthier habits.",
+      "A week of simple, whole-food plant-based meals to build fresh habits and enjoy more vegetables, grains, and legumes.",
     description:
-      "This 7-day cleanse focuses on whole, unprocessed plant foods to give your digestive system a break, flood your body with nutrients, and reset your palate. You'll eliminate processed foods, refined sugars, caffeine, and alcohol while nourishing yourself with vibrant, satisfying meals.",
-    category: "Detox",
+      "This 7-day plan is built around whole, minimally processed plant foods — vegetables, fruits, whole grains, legumes, nuts, and seeds. It's a simple way to fill your week with colorful, satisfying meals and get comfortable cooking plant-based at home.",
+    category: "Reset",
     duration: "7 Days",
     icon: "🌿",
     image:
       "https://images.unsplash.com/photo-1490645935967-10de6ba17061?w=600&h=400&fit=crop",
     highlights: [
-      "Eliminates processed foods and refined sugars",
-      "Focus on hydration and fiber-rich meals",
-      "Includes daily morning lemon water ritual",
-      "Gentle enough for beginners",
+      "Built around whole, minimally processed foods",
+      "Colorful, fibre-rich meals every day",
+      "Simple recipes with everyday ingredients",
+      "Beginner-friendly and easy to follow",
     ],
     schedule: [
       { day: "Day 1", breakfast: "Green smoothie with spinach, banana, and almond milk", lunch: "Large rainbow salad with lemon tahini dressing", dinner: "Vegetable miso soup with brown rice", snack: "Apple slices with almond butter" },
@@ -52,19 +52,19 @@ export const dietPlans: DietPlan[] = [
     slug: "high-protein-plant-power",
     title: "High-Protein Plant Power",
     excerpt:
-      "Build muscle and stay energized with 30 days of protein-packed plant-based meals and snacks.",
+      "30 days of protein-rich plant-based meals and snacks for active, hungry days.",
     description:
-      "Designed for active individuals, this 30-day plan delivers 80-120g of plant protein daily through strategic meal combinations. Each day is optimized for muscle recovery, sustained energy, and satiety — proving you can build serious strength on plants.",
+      "Designed for active people, this 30-day plan builds meals around protein-rich plant foods like tofu, tempeh, seitan, lentils, beans, and hemp. Each day combines filling, flavorful meals and snacks to keep an active lifestyle well-fueled — proof that you can eat plenty of protein on plants.",
     category: "Fitness",
     duration: "30 Days",
     icon: "💪",
     image:
       "https://images.unsplash.com/photo-1490645935967-10de6ba17061?w=600&h=400&fit=crop",
     highlights: [
-      "80-120g plant protein daily",
-      "Pre and post-workout meal timing",
-      "Complete amino acid profiles in every meal",
-      "Grocery lists and batch-cooking guides included",
+      "Protein-rich meals built on tofu, tempeh, beans, and lentils",
+      "Ideas for pre- and post-workout meals",
+      "A variety of complete-protein combinations",
+      "Grocery lists and batch-cooking tips included",
     ],
     schedule: [
       { day: "Week 1", breakfast: "Tofu scramble with spinach, mushrooms, and nutritional yeast (25g protein)", lunch: "Lentil and quinoa power bowl with roasted vegetables (28g protein)", dinner: "Tempeh stir-fry with broccoli, edamame, and brown rice (32g protein)", snack: "Chocolate protein shake with hemp seeds and peanut butter (20g protein)" },
@@ -74,69 +74,69 @@ export const dietPlans: DietPlan[] = [
     ],
   },
   {
-    slug: "anti-inflammatory-plan",
-    title: "Anti-Inflammatory Plan",
+    slug: "colorful-whole-foods-plan",
+    title: "Colorful Whole-Foods Plan",
     excerpt:
-      "Reduce chronic inflammation with 21 days of healing foods, warming spices, and nutrient-dense superfoods.",
+      "21 days of vibrant, plant-packed meals featuring turmeric, ginger, berries, greens, and warming spices.",
     description:
-      "This science-backed 21-day plan strategically incorporates anti-inflammatory powerhouses — turmeric, ginger, berries, omega-3-rich seeds, and leafy greens — into every meal. By eliminating inflammatory triggers and flooding your body with healing compounds, most participants report reduced pain, clearer skin, and improved energy within the first week.",
-    category: "Healing",
+      "This 21-day plan is all about variety and color. Meals are built around turmeric, ginger, berries, leafy greens, omega-3-rich seeds, and warming spices — a flavorful way to enjoy a wider range of whole plant foods across your week.",
+    category: "Whole Foods",
     duration: "21 Days",
     icon: "✨",
     image:
       "https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=600&h=400&fit=crop",
     highlights: [
-      "Eliminates common inflammatory triggers",
-      "Rich in turmeric, ginger, and omega-3 foods",
-      "Includes anti-inflammatory golden milk daily",
-      "Guided by nutritional science research",
+      "Meals rich in turmeric, ginger, and colorful produce",
+      "Plenty of omega-3 foods like flax and walnuts",
+      "A warming golden-milk-style drink to enjoy",
+      "Lots of variety and flavor across the week",
     ],
     schedule: [
-      { day: "Week 1", breakfast: "Golden turmeric oatmeal with walnuts, blueberries, and flaxseed", lunch: "Kale and quinoa salad with anti-inflammatory ginger-miso dressing", dinner: "Turmeric coconut lentil soup with wilted greens", snack: "Berry smoothie with flax and ginger" },
+      { day: "Week 1", breakfast: "Golden turmeric oatmeal with walnuts, blueberries, and flaxseed", lunch: "Kale and quinoa salad with ginger-miso dressing", dinner: "Turmeric coconut lentil soup with wilted greens", snack: "Berry smoothie with flax and ginger" },
       { day: "Week 2", breakfast: "Chia pudding with mixed berries, hemp seeds, and cinnamon", lunch: "Roasted sweet potato and black bean bowl with avocado", dinner: "Ginger-garlic vegetable stir-fry with brown rice and edamame", snack: "Golden milk latte with turmeric, cinnamon, and black pepper" },
-      { day: "Week 3", breakfast: "Green anti-inflammatory smoothie with spinach, pineapple, and turmeric", lunch: "Mediterranean lentil and roasted vegetable salad with olive oil", dinner: "Mushroom and barley stew with thyme and rosemary", snack: "Walnuts, dark chocolate, and fresh berries" },
+      { day: "Week 3", breakfast: "Green smoothie with spinach, pineapple, and turmeric", lunch: "Mediterranean lentil and roasted vegetable salad with olive oil", dinner: "Mushroom and barley stew with thyme and rosemary", snack: "Walnuts, dark chocolate, and fresh berries" },
     ],
   },
   {
-    slug: "gut-health-restore",
-    title: "Gut Health Restore",
+    slug: "fibre-and-ferments-plan",
+    title: "Fibre & Ferments Plan",
     excerpt:
-      "Rebuild your microbiome with fermented foods, prebiotics, and fiber-rich whole plant meals.",
+      "14 days centered on fibre-rich whole foods and fermented favorites like kimchi, sauerkraut, miso, and tempeh.",
     description:
-      "Your gut microbiome is the foundation of your health. This 14-day plan is specifically designed to increase microbial diversity by incorporating 30+ different plant foods per week, daily fermented foods, and targeted prebiotic fibers. Follow this plan to reduce bloating, improve digestion, and strengthen your immune system.",
-    category: "Digestive",
+      "This 14-day plan leans into two things plant-based eating does really well: fibre and fermented foods. You'll aim for a wide variety of plants across the week and enjoy daily fermented foods like kimchi, sauerkraut, miso, and tempeh — a delicious way to keep meals interesting and full of flavor.",
+    category: "Whole Foods",
     duration: "14 Days",
     icon: "🫶",
     image:
       "https://images.unsplash.com/photo-1494390248081-4e521a5940db?w=600&h=400&fit=crop",
     highlights: [
-      "30+ different plants per week for microbiome diversity",
+      "Aim for 30+ different plants across the week",
       "Daily fermented foods (kimchi, sauerkraut, miso, tempeh)",
-      "Prebiotic-rich meals to feed beneficial bacteria",
-      "Eliminates common gut irritants",
+      "Fibre-rich meals with beans, grains, and greens",
+      "Plenty of variety and flavor",
     ],
     schedule: [
-      { day: "Week 1", breakfast: "Warm miso soup with tofu and seaweed, plus overnight oats with prebiotic banana", lunch: "Rainbow grain bowl with 8+ vegetables and sauerkraut", dinner: "Tempeh and vegetable kimchi stew with brown rice", snack: "Kefir smoothie with berries and flaxseed" },
+      { day: "Week 1", breakfast: "Warm miso soup with tofu and seaweed, plus overnight oats with banana", lunch: "Rainbow grain bowl with 8+ vegetables and sauerkraut", dinner: "Tempeh and vegetable kimchi stew with brown rice", snack: "Kefir-style smoothie with berries and flaxseed" },
       { day: "Week 2", breakfast: "Sourdough toast with avocado, sauerkraut, and pumpkin seeds", lunch: "Lentil and vegetable soup with fermented pickles", dinner: "Miso-glazed roasted vegetables with quinoa and tempeh", snack: "Kombucha with raw vegetables and hummus" },
     ],
   },
   {
-    slug: "weight-management-plan",
-    title: "Whole-Food Weight Management",
+    slug: "balanced-whole-food-plan",
+    title: "Balanced Whole-Food Plan",
     excerpt:
-      "A sustainable, calorie-conscious plan focused on satiety, whole foods, and balanced macronutrients.",
+      "A sustainable, satisfying approach to everyday eating built on filling, fibre-rich whole foods.",
     description:
-      "This isn't a crash diet — it's a 30-day sustainable approach to weight management through whole plant foods. By focusing on fiber-rich, nutrient-dense meals that keep you full and satisfied, you'll naturally find your optimal weight without counting calories or feeling deprived.",
-    category: "Weight Loss",
+      "This isn't a crash diet — it's a 30-day approach to balanced, everyday eating. By focusing on fibre-rich, filling whole-plant meals, it's easy to eat well and feel satisfied without counting calories or feeling deprived.",
+    category: "Balanced",
     duration: "30 Days",
     icon: "⚖️",
     image:
       "https://images.unsplash.com/photo-1478145046317-39f10e56b5e9?w=600&h=400&fit=crop",
     highlights: [
       "No calorie counting — focus on food quality",
-      "High fiber and volume for natural satiety",
-      "Balanced macros in every meal",
-      "Sustainable approach — no deprivation",
+      "High-fibre, high-volume meals that satisfy",
+      "Balanced plates at every meal",
+      "A sustainable approach — no deprivation",
     ],
     schedule: [
       { day: "Week 1", breakfast: "Veggie-loaded tofu scramble with whole grain toast and fruit", lunch: "Massive chopped salad with chickpeas, seeds, and lemon dressing", dinner: "Cauliflower rice stir-fry with edamame and cashew sauce", snack: "Apple with a thin spread of almond butter" },
@@ -147,25 +147,25 @@ export const dietPlans: DietPlan[] = [
   },
   {
     slug: "energy-vitality-boost",
-    title: "Energy & Vitality Boost",
+    title: "Energy & Vitality Plan",
     excerpt:
-      "Combat fatigue with iron-rich greens, complex carbs, and adaptogenic superfoods across 14 energizing days.",
+      "14 days of meals built around iron-rich greens, slow-release carbs, and satisfying plant foods.",
     description:
-      "Feeling drained? This 14-day plan targets the root causes of low energy: nutrient deficiencies, blood sugar imbalances, and adrenal fatigue. Every meal is designed to provide sustained energy through iron-rich greens, complex carbohydrates, B-vitamins, and adaptogenic superfoods like maca and ashwagandha.",
+      "This 14-day plan builds meals around iron-rich greens, slow-release complex carbohydrates, and plenty of colorful plants — a tasty way to keep your plate varied and your meals satisfying throughout the day.",
     category: "Energy",
     duration: "14 Days",
     icon: "⚡",
     image:
       "https://images.unsplash.com/photo-1607532941433-304659e8198a?w=600&h=400&fit=crop",
     highlights: [
-      "Iron-rich meals paired with vitamin C for absorption",
-      "Complex carbs for sustained blood sugar",
-      "Adaptogenic superfoods (maca, ashwagandha)",
-      "No caffeine crashes — natural energy only",
+      "Iron-rich meals paired with vitamin C foods",
+      "Slow-release complex carbs for steady meals",
+      "Optional adaptogen add-ins like maca",
+      "Naturally caffeine-free",
     ],
     schedule: [
-      { day: "Week 1", breakfast: "Maca-boosted banana smoothie with spinach, oats, and almond butter", lunch: "Iron-rich lentil and kale salad with lemon-tahini and pumpkin seeds", dinner: "Sweet potato and black bean power bowl with quinoa and avocado", snack: "Energy balls with dates, oats, maca, and cacao" },
-      { day: "Week 2", breakfast: "Ashwagandha golden oatmeal with walnuts, banana, and hemp seeds", lunch: "Chickpea and spinach curry with iron-fortified brown rice", dinner: "Tempeh and broccoli stir-fry with sesame and ginger", snack: "Trail mix with Brazil nuts, pumpkin seeds, and dried apricots" },
+      { day: "Week 1", breakfast: "Banana smoothie with spinach, oats, almond butter, and optional maca", lunch: "Iron-rich lentil and kale salad with lemon-tahini and pumpkin seeds", dinner: "Sweet potato and black bean power bowl with quinoa and avocado", snack: "Energy balls with dates, oats, and cacao" },
+      { day: "Week 2", breakfast: "Golden oatmeal with walnuts, banana, and hemp seeds", lunch: "Chickpea and spinach curry with brown rice", dinner: "Tempeh and broccoli stir-fry with sesame and ginger", snack: "Trail mix with Brazil nuts, pumpkin seeds, and dried apricots" },
     ],
   },
 ];

@@ -1,8 +1,11 @@
 import type { MetadataRoute } from "next";
 import { getAllPosts } from "@/lib/blog";
+import { recipes } from "@/content/recipes";
+import { juices } from "@/content/juice-pharmacy";
+import { dietPlans } from "@/content/diet-plans";
 
 const siteUrl =
-  process.env.NEXT_PUBLIC_SITE_URL ?? "https://veganster.example.com";
+  process.env.NEXT_PUBLIC_SITE_URL ?? "https://www.veganster.com";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const staticRoutes: MetadataRoute.Sitemap = [
@@ -12,7 +15,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/blog",
     "/recipes",
     "/diet-plans",
-    "/juice-pharmacy",
+    "/juices-and-smoothies",
     "/privacy",
     "/terms",
   ].map((path) => {
@@ -32,5 +35,16 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.6,
   }));
 
-  return [...staticRoutes, ...postRoutes];
+  const detailRoutes: MetadataRoute.Sitemap = [
+    ...recipes.map((r) => `/recipes/${r.slug}`),
+    ...juices.map((j) => `/juices-and-smoothies/${j.slug}`),
+    ...dietPlans.map((p) => `/diet-plans/${p.slug}`),
+  ].map((path) => ({
+    url: `${siteUrl}${path}`,
+    lastModified: new Date(),
+    changeFrequency: "monthly" as const,
+    priority: 0.6,
+  }));
+
+  return [...staticRoutes, ...postRoutes, ...detailRoutes];
 }

@@ -7,7 +7,7 @@ import DietPlanGrid from "@/components/DietPlanGrid";
 export const metadata: Metadata = {
   title: "Diet Plans — Veganster",
   description:
-    "Structured plant-based wellness programs designed by nutritionists to help you thrive.",
+    "Structured plant-based meal plans with day-by-day menus, shopping lists, and prep tips — pick one and get cooking.",
 };
 
 export default function DietPlansPage() {
@@ -16,9 +16,9 @@ export default function DietPlansPage() {
       <Header />
 
       <PageHeader
-        label="Your Wellness Journey"
+        label="Plant-Based Meal Plans"
         title="Diet Plans"
-        description="Structured programs designed by nutritionists to help you thrive on a plant-based lifestyle."
+        description="Structured plant-based meal plans with day-by-day menus, shopping lists, and prep tips — pick one and get cooking."
         image="https://images.unsplash.com/photo-1490645935967-10de6ba17061?w=1600&h=600&fit=crop"
       />
 
@@ -44,17 +44,17 @@ export default function DietPlansPage() {
               {
                 step: "01",
                 title: "Choose Your Plan",
-                desc: "Pick a program that matches your health goals — from detox to muscle building.",
+                desc: "Pick a plan that matches what you're after — from a whole-food reset to a high-protein week.",
               },
               {
                 step: "02",
                 title: "Get Your Meals",
-                desc: "Receive a day-by-day meal plan with recipes, shopping lists, and prep guides.",
+                desc: "Follow a day-by-day menu with recipes, shopping lists, and simple prep guides.",
               },
               {
                 step: "03",
-                title: "Transform Your Health",
-                desc: "Follow the plan, track your progress, and feel the difference in your body and mind.",
+                title: "Cook & Enjoy",
+                desc: "Make the meals your own, mix in your favorites, and enjoy a week of great plant-based food.",
               },
             ].map((item) => (
               <div key={item.step} className="text-center">

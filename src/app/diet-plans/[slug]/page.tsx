@@ -19,7 +19,7 @@ export async function generateMetadata({
   const plan = dietPlans.find((p) => p.slug === slug);
   if (!plan) return {};
   return {
-    title: `${plan.title} — Veganster Diet Plans`,
+    title: `${plan.title} — Veganster`,
     description: plan.excerpt,
   };
 }
@@ -84,6 +84,12 @@ export default async function DietPlanDetailPage({
               </h2>
               <p className="text-warm-gray leading-relaxed text-lg">
                 {plan.description}
+              </p>
+              <p className="mt-6 text-sm text-warm-gray-light italic leading-relaxed">
+                This meal plan is for general information and inspiration only.
+                It is not medical or nutritional advice. Everyone&apos;s needs
+                are different — check with a qualified healthcare professional
+                before starting any new eating plan.
               </p>
             </div>
 
@@ -172,8 +178,8 @@ export default async function DietPlanDetailPage({
             Ready to Start?
           </h2>
           <p className="text-white/70 mb-8">
-            Begin your {plan.duration.toLowerCase()} journey today and
-            experience the transformative power of plant-based nutrition.
+            Follow the {plan.duration.toLowerCase()} menu and enjoy a stretch of
+            simple, satisfying plant-based meals along the way.
           </p>
           <Link
             href="/diet-plans"

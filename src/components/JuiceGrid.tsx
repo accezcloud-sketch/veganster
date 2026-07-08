@@ -7,14 +7,12 @@ import { juices } from "@/content/juice-pharmacy";
 
 const categories = [
   "All",
-  "Immune Support",
-  "Energy",
-  "Detox",
-  "Anti-Inflammatory",
-  "Recovery",
-  "Sleep & Calm",
-  "Skin Health",
-  "Protein",
+  "Green",
+  "Berry",
+  "Golden",
+  "Tropical",
+  "Root",
+  "Creamy",
 ];
 
 export default function JuiceGrid() {
@@ -49,7 +47,7 @@ export default function JuiceGrid() {
         {filtered.map((juice) => (
           <Link
             key={juice.slug}
-            href={`/juice-pharmacy/${juice.slug}`}
+            href={`/juices-and-smoothies/${juice.slug}`}
             className="group"
           >
             <article className="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-lg transition-shadow h-full">

@@ -15,7 +15,7 @@ const inter = Inter({
 });
 
 const siteUrl =
-  process.env.NEXT_PUBLIC_SITE_URL ?? "https://veganster.example.com";
+  process.env.NEXT_PUBLIC_SITE_URL ?? "https://www.veganster.com";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
@@ -24,7 +24,7 @@ export const metadata: Metadata = {
     template: "%s — Veganster",
   },
   description:
-    "Discover delicious vegan recipes, healing juice blends, wellness programs, and plant-based living inspiration at Veganster.",
+    "Discover delicious vegan recipes, fresh juices and smoothies, simple meal plans, and plant-based living inspiration at Veganster.",
   openGraph: {
     type: "website",
     siteName: "Veganster",
@@ -32,13 +32,13 @@ export const metadata: Metadata = {
     url: "/",
     title: "Veganster — Plant-Based Living & Wellness",
     description:
-      "Discover delicious vegan recipes, healing juice blends, wellness programs, and plant-based living inspiration at Veganster.",
+      "Discover delicious vegan recipes, fresh juices and smoothies, simple meal plans, and plant-based living inspiration at Veganster.",
   },
   twitter: {
     card: "summary_large_image",
     title: "Veganster — Plant-Based Living & Wellness",
     description:
-      "Discover delicious vegan recipes, healing juice blends, wellness programs, and plant-based living inspiration at Veganster.",
+      "Discover delicious vegan recipes, fresh juices and smoothies, simple meal plans, and plant-based living inspiration at Veganster.",
   },
   robots: {
     index: true,

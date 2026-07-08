@@ -9,7 +9,7 @@ coverImageAlt: A vibrant assortment of freshly squeezed juices in clear glasses,
 coverImageCredit: Photo by Brooke Lark on Unsplash
 coverImageCreditUrl: https://unsplash.com/photos/W1B2LpQOBxA
 readTime: "7 min read"
-description: "Demystify the juice cleanse experience. Understand the potential benefits and common challenges of this popular plant-based detox trend for a more informed approach."
+description: "Demystify the juice cleanse experience. Understand the realistic benefits and common challenges so you can make an informed choice."
 tags:
   - Juice Cleanse
   - Plant-Based Wellness

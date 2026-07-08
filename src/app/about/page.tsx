@@ -6,7 +6,7 @@ import Footer from "@/components/Footer";
 export const metadata: Metadata = {
   title: "About — Veganster",
   description:
-    "Learn about the Veganster story — our mission to inspire plant-based living and natural healing through food.",
+    "Learn about the Veganster story — our mission to make plant-based cooking easy, delicious, and accessible for everyone.",
 };
 
 export default function AboutPage() {
@@ -48,12 +48,12 @@ export default function AboutPage() {
                 Our Mission
               </p>
               <h2 className="font-[family-name:var(--font-playfair)] text-3xl md:text-4xl font-bold text-charcoal mb-6">
-                Food Is Medicine
+                Food You&apos;ll Love
               </h2>
               <p className="text-warm-gray leading-relaxed mb-4">
-                Veganster was born from a simple but powerful belief — that the
-                food we eat has the power to heal, energize, and transform our
-                lives from the inside out.
+                Veganster was born from a simple belief — that plant-based food
+                can be genuinely delicious, easy to cook, and good for you and
+                the planet at the same time.
               </p>
               <p className="text-warm-gray leading-relaxed">
                 We started as a small kitchen experiment and grew into a
@@ -95,9 +95,9 @@ export default function AboutPage() {
                 desc: "Every recipe, blend, and program is 100% plant-based — no exceptions.",
               },
               {
-                icon: "🔬",
-                title: "Science-Backed",
-                desc: "Our nutrition advice is rooted in research and reviewed by qualified professionals.",
+                icon: "📚",
+                title: "Well-Researched",
+                desc: "We do our homework and point to reputable sources so you can read further yourself.",
               },
               {
                 icon: "🌍",
@@ -142,13 +142,13 @@ export default function AboutPage() {
             {[
               {
                 title: "Vegan Recipes",
-                desc: "Hundreds of tested, wholesome recipes for every meal — from quick breakfasts to show-stopping dinners.",
+                desc: "A growing collection of tested, wholesome recipes for every meal — from quick breakfasts to show-stopping dinners.",
                 image:
                   "https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=500&h=300&fit=crop",
               },
               {
-                title: "Juice Pharmacy",
-                desc: "Healing smoothies and juice blends designed to target specific health concerns — immunity, energy, sleep, and more.",
+                title: "Juices & Smoothies",
+                desc: "Fresh juices and blended smoothies made with whole fruits, vegetables, and herbs — simple recipes to make at home.",
                 image:
                   "https://images.unsplash.com/photo-1610970881699-44a5587cabec?w=500&h=300&fit=crop",
               },
@@ -159,8 +159,8 @@ export default function AboutPage() {
                   "https://images.unsplash.com/photo-1490645935967-10de6ba17061?w=500&h=300&fit=crop",
               },
               {
-                title: "Wellness Blog",
-                desc: "Expert articles on nutrition science, gut health, plant-based lifestyle tips, and sustainable living.",
+                title: "Blog",
+                desc: "Approachable articles on plant-based cooking, nutrition basics, everyday tips, and sustainable living.",
                 image:
                   "https://images.unsplash.com/photo-1498837167922-ddd27525d352?w=500&h=300&fit=crop",
               },
@@ -199,8 +199,8 @@ export default function AboutPage() {
             Ready to Start Your Plant-Based Journey?
           </h2>
           <p className="text-white/70 leading-relaxed mb-10 max-w-xl mx-auto">
-            Join thousands of people who have transformed their health, energy,
-            and lives through the power of plants.
+            Join a community of people cooking more plants, trying new recipes,
+            and having fun in the kitchen.
           </p>
           <div className="flex flex-wrap gap-4 justify-center">
             <a

@@ -37,8 +37,8 @@ export default function Footer() {
                 <span>Veganster</span>
               </Link>
               <p className="mt-4 text-sm leading-relaxed">
-                Plant-based recipes, healing juices, and wellness programs for a
-                healthier, happier you.
+                Plant-based recipes, fresh juices, and simple meal plans for
+                everyday cooking and eating well.
               </p>
             </div>
             <div>
@@ -50,8 +50,8 @@ export default function Footer() {
                   </Link>
                 </li>
                 <li>
-                  <Link href="/juice-pharmacy" className="hover:text-white transition-colors">
-                    Juice Pharmacy
+                  <Link href="/juices-and-smoothies" className="hover:text-white transition-colors">
+                    Juices & Smoothies
                   </Link>
                 </li>
                 <li>
@@ -92,7 +92,14 @@ export default function Footer() {
               </ul>
             </div>
           </div>
-          <div className="mt-12 pt-8 border-t border-white/10 text-center text-sm">
+          <div className="mt-12 pt-8 border-t border-white/10 text-center text-sm space-y-3">
+            <p className="max-w-3xl mx-auto text-xs leading-relaxed text-white/40">
+              The recipes, meal plans, and articles on Veganster are for general
+              information and inspiration only. They are not medical or
+              nutritional advice and are not intended to diagnose, treat, cure,
+              or prevent any condition. Consult a qualified healthcare
+              professional before making changes to your diet.
+            </p>
             <p>&copy; 2026 Veganster. All rights reserved.</p>
           </div>
         </div>

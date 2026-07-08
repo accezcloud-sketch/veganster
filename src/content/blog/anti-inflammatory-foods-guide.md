@@ -1,6 +1,6 @@
 ---
 title: The Ultimate Anti-Inflammatory Foods Guide
-excerpt: Learn which foods fight chronic inflammation and how to build an anti-inflammatory plate every day.
+excerpt: Learn which colorful whole foods to build your plate around, and how to put them together every day.
 date: "2026-03-07"
 author: Veganster Team
 category: Wellness
@@ -9,7 +9,7 @@ coverImageAlt: Plate of anti-inflammatory foods with berries, leafy greens, turm
 coverImageCredit: Unsplash
 coverImageCreditUrl: https://unsplash.com
 readTime: 10 min read
-description: "Which foods fuel chronic inflammation, which ones fight it, and exactly how to build an anti-inflammatory plate — with a 7-day challenge to try."
+description: "Which colorful whole foods to build your plate around, and exactly how to put them together — with a simple 7-day challenge to try."
 tags:
   - anti-inflammatory
   - chronic inflammation
@@ -21,11 +21,11 @@ Chronic inflammation is the silent driver behind heart disease, diabetes, autoim
 
 ## Understanding Inflammation
 
-When you eat highly processed foods, refined sugars, and industrial seed oils, your body triggers an immune response. Over time, this constant low-grade activation damages tissues, accelerates aging, and increases disease risk. Plant-based whole foods do the opposite — they contain thousands of compounds that actively fight inflammation.
+Diets heavy in highly processed foods, refined sugars, and industrial seed oils are widely considered less healthy. Plant-based whole foods, by contrast, are rich in antioxidants, fibre, and other beneficial plant compounds.
 
 ## The Top Anti-Inflammatory Foods
 
-Berries (especially blueberries and strawberries) are rich in anthocyanins. Leafy greens provide antioxidants and vitamin K. Turmeric and ginger are powerful anti-inflammatory spices. Walnuts and flaxseed deliver anti-inflammatory omega-3 fats. Tomatoes provide lycopene. Extra virgin olive oil contains oleocanthal, which works similarly to ibuprofen.
+Berries (especially blueberries and strawberries) are rich in anthocyanins. Leafy greens provide antioxidants and vitamin K. Turmeric and ginger are powerful anti-inflammatory spices. Walnuts and flaxseed deliver anti-inflammatory omega-3 fats. Tomatoes provide lycopene. Extra virgin olive oil contains oleocanthal, the natural compound behind its peppery finish.
 
 ## Foods That Fuel Inflammation
 
@@ -37,8 +37,8 @@ Fill half your plate with colorful vegetables and leafy greens. Add a quarter pl
 
 ## The 7-Day Challenge
 
-Commit to one week of anti-inflammatory eating and pay attention to how you feel. Most people report reduced joint pain, better digestion, clearer skin, and more stable energy within just a few days. Keep a simple journal noting your energy, mood, and any symptoms — the results often speak for themselves.
+Commit to one week of colorful, whole-food eating and pay attention to how you feel. Many people simply enjoy how varied and satisfying their meals become. Keep a simple journal noting your energy and mood — it's a fun way to notice what works for you.
 
 ## Beyond Diet
 
-While food is foundational, other lifestyle factors matter too. Regular movement, quality sleep, stress management, and time in nature all reduce inflammation. Think of anti-inflammatory eating as one pillar of a broader wellness strategy — the pillar you interact with three times a day. To go deeper, read [the science behind gut health](/blog/science-behind-gut-health) and [7 superfoods you should eat daily](/blog/superfoods-you-should-eat-daily).
+While food is foundational, other lifestyle factors matter too. Regular movement, quality sleep, stress management, and time in nature all support a healthy lifestyle. Think of colorful, whole-food eating as one pillar of a broader routine — the pillar you interact with three times a day. To go deeper, read [the science behind gut health](/blog/science-behind-gut-health) and [7 superfoods you should eat daily](/blog/superfoods-you-should-eat-daily).

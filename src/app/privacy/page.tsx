@@ -6,7 +6,7 @@ import Footer from "@/components/Footer";
 export const metadata: Metadata = {
   title: "Privacy Policy — Veganster",
   description:
-    "How Veganster collects, uses, and protects your personal information when you use our recipes, juice pharmacy, diet plans, and newsletter.",
+    "How Veganster collects, uses, and protects your personal information when you use our recipes, juices and smoothies, diet plans, and newsletter.",
 };
 
 const lastUpdated = "April 28, 2026";
@@ -85,7 +85,7 @@ export default function PrivacyPolicyPage() {
               </h2>
               <p className="mb-3">We use the information we collect to:</p>
               <ul className="list-disc pl-6 space-y-2">
-                <li>Deliver our recipes, diet plans, and juice pharmacy content.</li>
+                <li>Deliver our recipes, diet plans, and juice and smoothie content.</li>
                 <li>Send our newsletter and respond to your messages.</li>
                 <li>Personalize what you see and recommend relevant articles.</li>
                 <li>Measure performance and improve the experience on our site.</li>

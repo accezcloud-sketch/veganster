@@ -6,7 +6,7 @@ import Footer from "@/components/Footer";
 export const metadata: Metadata = {
   title: "Terms of Service — Veganster",
   description:
-    "The terms that govern your use of Veganster — including our recipes, juice pharmacy, diet plans, and newsletter.",
+    "The terms that govern your use of Veganster — including our recipes, juices and smoothies, diet plans, and newsletter.",
 };
 
 const lastUpdated = "April 28, 2026";
@@ -39,7 +39,7 @@ export default function TermsOfServicePage() {
               <p>
                 Welcome to Veganster. These Terms of Service (&ldquo;Terms&rdquo;)
                 govern your access to and use of veganster.com, including our
-                recipes, juice pharmacy, diet plans, blog, newsletter, and any
+                recipes, juices and smoothies, diet plans, blog, newsletter, and any
                 related services (collectively, the &ldquo;Service&rdquo;). By
                 using the Service, you agree to these Terms. If you don&apos;t
                 agree, please don&apos;t use the Service.

@@ -26,13 +26,13 @@ The intricate link between our gut and our brain, often referred to as the gut-b
 
 Plant-based diets are naturally rich in a spectrum of vitamins, minerals, and antioxidants that are vital for optimal brain function and mood regulation. For instance, **B vitamins**, found in abundance in leafy greens, nuts, and seeds, are essential for energy production and neurotransmitter synthesis. Neurotransmitters are chemical messengers that play a direct role in how we feel, with compounds like serotonin and dopamine impacting our mood and feelings of well-being.
 
-**Omega-3 fatty acids**, while often associated with fish, are also available from plant sources like flaxseeds, chia seeds, and walnuts. These healthy fats are critical components of brain cell membranes and are known for their anti-inflammatory properties. Chronic inflammation in the body has been linked to various mental health challenges, so incorporating these plant-based omega-3s can be a powerful strategy for supporting brain health.
+**Omega-3 fatty acids**, while often associated with fish, are also available from plant sources like flaxseeds, chia seeds, and walnuts. These healthy fats are critical components of brain cell membranes and are known for their anti-inflammatory properties. Chronic inflammation in the body has been linked to various mental health challenges, so these plant-based omega-3s are a valuable part of a balanced diet.
 
 Furthermore, the vibrant colors of fruits and vegetables signify the presence of **antioxidants**. These compounds help protect our brain cells from damage caused by free radicals, which can contribute to cognitive decline and mood disturbances over time. A diet diverse in plant foods ensures a broad spectrum of these protective agents.
 
 ## Reducing Inflammation for Mental Clarity
 
-Chronic inflammation is a common denominator in many physical and mental health issues. Processed foods, refined sugars, and unhealthy fats can promote inflammation throughout the body, including the brain. Conversely, a whole-foods, plant-based diet is inherently **anti-inflammatory**. It’s packed with antioxidants, fiber, and beneficial plant compounds that work to calm inflammation. By reducing the inflammatory burden on your system, you create a more favorable environment for your brain to function optimally, potentially leading to clearer thinking, improved focus, and a more stable mood.
+Chronic inflammation is a common denominator in many physical and mental health issues. Processed foods, refined sugars, and unhealthy fats can promote inflammation throughout the body, including the brain. Conversely, a whole-foods, plant-based diet is inherently **anti-inflammatory**. It’s packed with antioxidants, fiber, and beneficial plant compounds that work to calm inflammation. Building meals around whole, plant-based foods is a positive everyday habit that many people find helps them feel their best.
 
 ## The Psychological Benefits of a Plant-Based Lifestyle
 
