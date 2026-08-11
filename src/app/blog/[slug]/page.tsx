@@ -6,7 +6,17 @@ import ReactMarkdown, { type Components } from "react-markdown";
 import remarkGfm from "remark-gfm";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import JsonLd from "@/components/JsonLd";
 import { getAllPosts, getPostBySlug } from "@/lib/blog";
+import {
+  ORGANIZATION_ID,
+  SITE_NAME,
+  SITE_URL,
+  absoluteImage,
+  absoluteUrl,
+  breadcrumbJsonLd,
+  ogImage,
+} from "@/lib/seo";
 
 export async function generateStaticParams() {
   return getAllPosts().map((post) => ({ slug: post.slug }));
@@ -22,11 +32,15 @@ export async function generateMetadata({
   if (!post) return {};
 
   const url = `/blog/${post.slug}`;
+  // Every cover image in the content asks for `fm=webp`, which social
+  // scrapers do not reliably render — ogImage() serves the same photo as a
+  // 1200x630 raster instead.
+  const social = ogImage(post.coverImage);
 
   return {
     title: post.title,
     description: post.description,
-    keywords: post.tags,
+    // `keywords` removed: meta keywords is not used by Google.
     authors: [{ name: post.author }],
     alternates: { canonical: url },
     openGraph: {
@@ -34,16 +48,17 @@ export async function generateMetadata({
       url,
       title: post.title,
       description: post.description,
-      siteName: "Veganster",
+      siteName: SITE_NAME,
       locale: "en_US",
       publishedTime: post.date,
+      modifiedTime: post.date,
       authors: [post.author],
       tags: post.tags,
       images: [
         {
-          url: post.coverImage,
+          url: social,
           width: 1200,
-          height: 800,
+          height: 630,
           alt: post.coverImageAlt,
         },
       ],
@@ -52,7 +67,7 @@ export async function generateMetadata({
       card: "summary_large_image",
       title: post.title,
       description: post.description,
-      images: [post.coverImage],
+      images: [social],
     },
   };
 }
@@ -144,46 +159,48 @@ export default async function BlogPostPage({
   const related = getAllPosts()
     .filter((p) => p.slug !== slug)
     .slice(0, 3);
-  const siteUrl =
-    process.env.NEXT_PUBLIC_SITE_URL ?? "https://www.veganster.com";
-  const postUrl = `${siteUrl}/blog/${post.slug}`;
+  const postUrl = absoluteUrl(`/blog/${post.slug}`);
 
   const articleJsonLd = {
     "@context": "https://schema.org",
-    "@type": "Article",
+    "@type": "BlogPosting",
     headline: post.title,
     description: post.description,
-    image: [post.coverImage],
+    // 1200x630 raster rather than the frontmatter's WebP URL, and sized to
+    // the minimum Google wants for article images.
+    image: [absoluteImage(ogImage(post.coverImage))],
     datePublished: post.date,
     dateModified: post.date,
     author: [
       {
         "@type": "Organization",
         name: post.author,
-        url: siteUrl,
+        url: SITE_URL,
       },
     ],
-    publisher: {
-      "@type": "Organization",
-      name: "Veganster",
-      logo: {
-        "@type": "ImageObject",
-        url: `${siteUrl}/icon.png`,
-      },
-    },
+    // publisher.logo dropped: Google requires a publisher logo of at least
+    // 112x112 and the only logo in this repo is 47x37, so declaring one would
+    // fail validation. The Organization itself is declared on the homepage.
+    publisher: { "@id": ORGANIZATION_ID },
+    url: postUrl,
     mainEntityOfPage: {
       "@type": "WebPage",
       "@id": postUrl,
     },
+    inLanguage: "en",
     keywords: post.tags.join(", "),
     articleSection: post.category,
   };
 
   return (
     <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd) }}
+      <JsonLd data={articleJsonLd} />
+      <JsonLd
+        data={breadcrumbJsonLd([
+          { name: "Home", path: "/" },
+          { name: "Blog", path: "/blog" },
+          { name: post.title },
+        ])}
       />
 
       <Header />

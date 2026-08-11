@@ -1,22 +1,49 @@
+import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import JsonLd from "@/components/JsonLd";
 import { recipes } from "@/content/recipes";
 import { juices } from "@/content/juice-pharmacy";
 import { dietPlans } from "@/content/diet-plans";
 import { getAllPosts } from "@/lib/blog";
+import {
+  DEFAULT_SOCIAL_IMAGE,
+  SITE_NAME,
+  ogImage,
+  organizationJsonLd,
+} from "@/lib/seo";
+
+const homeTitle = "Veganster — Plant-Based Living & Wellness";
+const homeDescription =
+  "Discover delicious vegan recipes, fresh juices and smoothies, simple meal plans, and plant-based living inspiration at Veganster.";
+
+// The homepage had no canonical of its own, so Google was left to choose one
+// from whatever URLs it crawled. `openGraph` is spelled out in full because
+// Next replaces the parent object rather than merging into it. The title is
+// not repeated here so it keeps the layout's untemplated default.
+export const metadata: Metadata = {
+  alternates: { canonical: "/" },
+  openGraph: {
+    type: "website",
+    url: "/",
+    title: homeTitle,
+    description: homeDescription,
+    siteName: SITE_NAME,
+    locale: "en_US",
+    images: [
+      {
+        url: ogImage(DEFAULT_SOCIAL_IMAGE),
+        width: 1200,
+        height: 630,
+        alt: "Colorful plant-based meal spread",
+      },
+    ],
+  },
+};
 
 /* ─── Helpers ────────────────────────────────────────────────────────── */
-
-function Stars({ rating }: { rating: number }) {
-  return (
-    <span className="flex items-center gap-1 text-sm text-peach font-medium">
-      {"★".repeat(Math.floor(rating))}
-      <span className="text-warm-gray-light ml-1">{rating}</span>
-    </span>
-  );
-}
 
 /* ─── Page ───────────────────────────────────────────────────────────── */
 
@@ -28,13 +55,17 @@ export default function Home() {
 
   return (
     <>
+      {/* Publisher identity, declared once on the homepage and referenced by
+          @id from the Recipe and Article markup on every other page. */}
+      <JsonLd data={organizationJsonLd()} />
+
       <Header />
 
       {/* ── Hero ── */}
       <section className="relative min-h-[90vh] flex items-center pt-16">
         <div className="absolute inset-0">
           <Image
-            src="https://images.unsplash.com/photo-1543362906-acfc16c67564?w=1600&h=900&fit=crop"
+            src={DEFAULT_SOCIAL_IMAGE}
             alt="Colorful plant-based meal spread"
             fill
             priority
@@ -109,7 +140,6 @@ export default function Home() {
                     <span className="text-sm text-warm-gray-light">
                       {recipe.cookTime}
                     </span>
-                    <Stars rating={recipe.rating} />
                   </div>
                   <h3 className="font-[family-name:var(--font-playfair)] text-xl font-semibold text-charcoal mb-3">
                     {recipe.title}

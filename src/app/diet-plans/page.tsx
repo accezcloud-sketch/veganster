@@ -1,25 +1,43 @@
-import type { Metadata } from "next";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import PageHeader from "@/components/PageHeader";
 import DietPlanGrid from "@/components/DietPlanGrid";
+import JsonLd from "@/components/JsonLd";
+import { dietPlans } from "@/content/diet-plans";
+import { breadcrumbJsonLd, itemListJsonLd, pageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
-  title: "Diet Plans — Veganster",
+const heroImage =
+  "https://images.unsplash.com/photo-1490645935967-10de6ba17061?w=1600&h=600&fit=crop";
+
+export const metadata = pageMetadata({
+  title: "Diet Plans",
   description:
     "Structured plant-based meal plans with day-by-day menus, shopping lists, and prep tips — pick one and get cooking.",
-};
+  path: "/diet-plans",
+  image: heroImage,
+  imageAlt: "An overhead spread of plant-based meals laid out for the week",
+});
 
 export default function DietPlansPage() {
   return (
     <>
+      <JsonLd
+        data={itemListJsonLd(dietPlans.map((p) => `/diet-plans/${p.slug}`))}
+      />
+      <JsonLd
+        data={breadcrumbJsonLd([
+          { name: "Home", path: "/" },
+          { name: "Diet Plans" },
+        ])}
+      />
+
       <Header />
 
       <PageHeader
         label="Plant-Based Meal Plans"
         title="Diet Plans"
         description="Structured plant-based meal plans with day-by-day menus, shopping lists, and prep tips — pick one and get cooking."
-        image="https://images.unsplash.com/photo-1490645935967-10de6ba17061?w=1600&h=600&fit=crop"
+        image={heroImage}
       />
 
       <section className="py-20 bg-cream">

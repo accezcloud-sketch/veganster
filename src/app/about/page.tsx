@@ -1,24 +1,39 @@
-import type { Metadata } from "next";
 import Image from "next/image";
+import Link from "next/link";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import JsonLd from "@/components/JsonLd";
+import { breadcrumbJsonLd, pageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
-  title: "About — Veganster",
+const heroImage =
+  "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=1600&h=600&fit=crop";
+
+export const metadata = pageMetadata({
+  title: "About",
   description:
     "Learn about the Veganster story — our mission to make plant-based cooking easy, delicious, and accessible for everyone.",
-};
+  path: "/about",
+  image: heroImage,
+  imageAlt: "Fresh vegetables and herbs on a wooden table",
+});
 
 export default function AboutPage() {
   return (
     <>
+      <JsonLd
+        data={breadcrumbJsonLd([
+          { name: "Home", path: "/" },
+          { name: "About" },
+        ])}
+      />
+
       <Header />
 
       {/* Hero */}
       <section className="relative pt-16">
         <div className="relative h-80 md:h-96 overflow-hidden">
           <Image
-            src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=1600&h=600&fit=crop"
+            src={heroImage}
             alt="Fresh vegetables and herbs on a wooden table"
             fill
             priority
@@ -203,18 +218,20 @@ export default function AboutPage() {
             and having fun in the kitchen.
           </p>
           <div className="flex flex-wrap gap-4 justify-center">
-            <a
+            {/* Were raw <a> tags, which forced a full page reload on every
+                internal click and skipped Next's prefetching. */}
+            <Link
               href="/recipes"
               className="px-8 py-3.5 bg-white text-forest font-semibold rounded-full hover:bg-cream transition-colors"
             >
               Browse Recipes
-            </a>
-            <a
+            </Link>
+            <Link
               href="/diet-plans"
               className="px-8 py-3.5 border-2 border-white/40 text-white font-semibold rounded-full hover:bg-white/10 transition-colors"
             >
               View Diet Plans
-            </a>
+            </Link>
           </div>
         </div>
       </section>

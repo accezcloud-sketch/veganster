@@ -1,27 +1,40 @@
-import type { Metadata } from "next";
 import Image from "next/image";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import JsonLd from "@/components/JsonLd";
+import { breadcrumbJsonLd, pageMetadata } from "@/lib/seo";
 
 const CONTACT_EMAIL = "accez.cloud@gmail.com";
 
-export const metadata: Metadata = {
-  title: "Contact — Veganster",
+const heroImage =
+  "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=1600&h=600&fit=crop";
+
+export const metadata = pageMetadata({
+  title: "Contact",
   description:
     "Get in touch with the Veganster team. We'd love to hear from you about recipes, partnerships, feedback, or anything plant-based.",
-  alternates: { canonical: "/contact" },
-};
+  path: "/contact",
+  image: heroImage,
+  imageAlt: "Fresh herbs and vegetables on a wooden surface",
+});
 
 export default function ContactPage() {
   return (
     <>
+      <JsonLd
+        data={breadcrumbJsonLd([
+          { name: "Home", path: "/" },
+          { name: "Contact" },
+        ])}
+      />
+
       <Header />
 
       {/* Hero */}
       <section className="relative pt-16">
         <div className="relative h-72 md:h-80 overflow-hidden">
           <Image
-            src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=1600&h=600&fit=crop"
+            src={heroImage}
             alt="Fresh herbs and vegetables on a wooden surface"
             fill
             priority

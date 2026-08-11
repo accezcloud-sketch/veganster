@@ -4,7 +4,14 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import JsonLd from "@/components/JsonLd";
 import { juices } from "@/content/juice-pharmacy";
+import {
+  breadcrumbJsonLd,
+  formatIngredient,
+  pageMetadata,
+  recipeJsonLd,
+} from "@/lib/seo";
 
 export async function generateStaticParams() {
   return juices.map((juice) => ({ slug: juice.slug }));
@@ -18,10 +25,14 @@ export async function generateMetadata({
   const { slug } = await params;
   const juice = juices.find((j) => j.slug === slug);
   if (!juice) return {};
-  return {
-    title: `${juice.title} — Veganster`,
+  return pageMetadata({
+    title: juice.title,
     description: juice.excerpt,
-  };
+    path: `/juices-and-smoothies/${juice.slug}`,
+    image: juice.image,
+    imageAlt: juice.title,
+    type: "article",
+  });
 }
 
 export default async function JuiceDetailPage({
@@ -40,6 +51,32 @@ export default async function JuiceDetailPage({
 
   return (
     <>
+      {/* Drinks qualify for the same Recipe rich result as food. Ingredients
+          are stored here as {item, amount} pairs, joined the way the page
+          already displays them. No cookTime — these are not cooked. */}
+      <JsonLd
+        data={recipeJsonLd({
+          name: juice.title,
+          description: juice.excerpt,
+          path: `/juices-and-smoothies/${juice.slug}`,
+          image: juice.image,
+          prepTime: juice.prepTime,
+          servings: juice.servings,
+          category: juice.category,
+          ingredients: juice.ingredients.map((ing) =>
+            formatIngredient(ing.item, ing.amount),
+          ),
+          instructions: juice.instructions,
+        })}
+      />
+      <JsonLd
+        data={breadcrumbJsonLd([
+          { name: "Home", path: "/" },
+          { name: "Juices & Smoothies", path: "/juices-and-smoothies" },
+          { name: juice.title },
+        ])}
+      />
+
       <Header />
 
       {/* Hero */}
@@ -122,7 +159,8 @@ export default async function JuiceDetailPage({
                 </h2>
                 <ol className="space-y-6">
                   {juice.instructions.map((step, i) => (
-                    <li key={i} className="flex gap-5">
+                    // id matches the HowToStep url in the Recipe JSON-LD.
+                    <li key={i} id={`step-${i + 1}`} className="flex gap-5">
                       <span className="shrink-0 w-9 h-9 rounded-full bg-forest text-white flex items-center justify-center text-sm font-bold">
                         {i + 1}
                       </span>

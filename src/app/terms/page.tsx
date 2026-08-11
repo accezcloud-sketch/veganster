@@ -1,13 +1,14 @@
-import type { Metadata } from "next";
 import Link from "next/link";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import { pageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
-  title: "Terms of Service — Veganster",
+export const metadata = pageMetadata({
+  title: "Terms of Service",
   description:
     "The terms that govern your use of Veganster — including our recipes, juices and smoothies, diet plans, and newsletter.",
-};
+  path: "/terms",
+});
 
 const lastUpdated = "April 28, 2026";
 

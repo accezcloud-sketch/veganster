@@ -1,25 +1,45 @@
-import type { Metadata } from "next";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import PageHeader from "@/components/PageHeader";
 import JuiceGrid from "@/components/JuiceGrid";
+import JsonLd from "@/components/JsonLd";
+import { juices } from "@/content/juice-pharmacy";
+import { breadcrumbJsonLd, itemListJsonLd, pageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
-  title: "Juices & Smoothies — Veganster",
+const heroImage =
+  "https://images.unsplash.com/photo-1610970881699-44a5587cabec?w=1600&h=600&fit=crop";
+
+export const metadata = pageMetadata({
+  title: "Juices & Smoothies",
   description:
     "Fresh-pressed juices and blended smoothies made with whole fruits, vegetables, and herbs — simple recipes to make at home.",
-};
+  path: "/juices-and-smoothies",
+  image: heroImage,
+  imageAlt: "A fresh green juice surrounded by whole fruit and vegetables",
+});
 
 export default function JuicePharmacyPage() {
   return (
     <>
+      <JsonLd
+        data={itemListJsonLd(
+          juices.map((j) => `/juices-and-smoothies/${j.slug}`),
+        )}
+      />
+      <JsonLd
+        data={breadcrumbJsonLd([
+          { name: "Home", path: "/" },
+          { name: "Juices & Smoothies" },
+        ])}
+      />
+
       <Header />
 
       <PageHeader
         label="Fresh & Cold-Pressed"
         title="Juices & Smoothies"
         description="Fresh-pressed juices and blended smoothies made with whole fruits, vegetables, and herbs — simple recipes you can make at home."
-        image="https://images.unsplash.com/photo-1610970881699-44a5587cabec?w=1600&h=600&fit=crop"
+        image={heroImage}
       />
 
       <section className="py-20 bg-cream">

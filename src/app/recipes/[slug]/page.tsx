@@ -4,7 +4,9 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import JsonLd from "@/components/JsonLd";
 import { recipes } from "@/content/recipes";
+import { breadcrumbJsonLd, pageMetadata, recipeJsonLd } from "@/lib/seo";
 
 export async function generateStaticParams() {
   return recipes.map((recipe) => ({ slug: recipe.slug }));
@@ -18,19 +20,17 @@ export async function generateMetadata({
   const { slug } = await params;
   const recipe = recipes.find((r) => r.slug === slug);
   if (!recipe) return {};
-  return {
-    title: `${recipe.title} — Veganster Recipes`,
+  // Was `${title} — Veganster Recipes`, which the layout template then turned
+  // into "... — Veganster Recipes — Veganster". This page also had no
+  // canonical and no Open Graph image of its own.
+  return pageMetadata({
+    title: `${recipe.title} Recipe`,
     description: recipe.excerpt,
-  };
-}
-
-function Stars({ rating }: { rating: number }) {
-  return (
-    <span className="flex items-center gap-1 text-lg text-peach font-medium">
-      {"★".repeat(Math.floor(rating))}
-      <span className="text-warm-gray-light ml-1">{rating}</span>
-    </span>
-  );
+    path: `/recipes/${recipe.slug}`,
+    image: recipe.image,
+    imageAlt: recipe.title,
+    type: "article",
+  });
 }
 
 export default async function RecipeDetailPage({
@@ -50,6 +50,33 @@ export default async function RecipeDetailPage({
 
   return (
     <>
+      {/* Recipe is one of the few schema types that still produces a rich
+          result in Google, and these pages had no structured data at all.
+          Only fields backed by the recipe's own data are emitted — see
+          recipeJsonLd() for what is deliberately left out and why. */}
+      <JsonLd
+        data={recipeJsonLd({
+          name: recipe.title,
+          description: recipe.excerpt,
+          path: `/recipes/${recipe.slug}`,
+          image: recipe.image,
+          prepTime: recipe.prepTime,
+          cookTime: recipe.cookTime,
+          servings: recipe.servings,
+          category: recipe.category,
+          keywords: recipe.tags,
+          ingredients: recipe.ingredients,
+          instructions: recipe.instructions,
+        })}
+      />
+      <JsonLd
+        data={breadcrumbJsonLd([
+          { name: "Home", path: "/" },
+          { name: "Recipes", path: "/recipes" },
+          { name: recipe.title },
+        ])}
+      />
+
       <Header />
 
       {/* Hero image */}
@@ -93,7 +120,6 @@ export default async function RecipeDetailPage({
             <span className="text-sm text-warm-gray-light">Servings</span>
             <span className="text-sm font-semibold text-charcoal">{recipe.servings}</span>
           </div>
-          <Stars rating={recipe.rating} />
           <div className="flex flex-wrap gap-2 ml-auto">
             {recipe.tags.map((tag) => (
               <span
@@ -138,7 +164,9 @@ export default async function RecipeDetailPage({
               </h2>
               <ol className="space-y-8">
                 {recipe.instructions.map((step, i) => (
-                  <li key={i} className="flex gap-5">
+                  // id matches the HowToStep url in the Recipe JSON-LD, so the
+                  // step anchors Google is told about actually exist.
+                  <li key={i} id={`step-${i + 1}`} className="flex gap-5">
                     <span className="shrink-0 w-9 h-9 rounded-full bg-forest text-white flex items-center justify-center text-sm font-bold">
                       {i + 1}
                     </span>

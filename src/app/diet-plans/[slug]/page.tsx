@@ -4,7 +4,16 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import JsonLd from "@/components/JsonLd";
 import { dietPlans } from "@/content/diet-plans";
+import {
+  ORGANIZATION_ID,
+  absoluteImage,
+  absoluteUrl,
+  breadcrumbJsonLd,
+  ogImage,
+  pageMetadata,
+} from "@/lib/seo";
 
 export async function generateStaticParams() {
   return dietPlans.map((plan) => ({ slug: plan.slug }));
@@ -18,10 +27,14 @@ export async function generateMetadata({
   const { slug } = await params;
   const plan = dietPlans.find((p) => p.slug === slug);
   if (!plan) return {};
-  return {
-    title: `${plan.title} — Veganster`,
+  return pageMetadata({
+    title: plan.title,
     description: plan.excerpt,
-  };
+    path: `/diet-plans/${plan.slug}`,
+    image: plan.image,
+    imageAlt: plan.title,
+    type: "article",
+  });
 }
 
 export default async function DietPlanDetailPage({
@@ -35,9 +48,36 @@ export default async function DietPlanDetailPage({
   if (!plan) notFound();
 
   const related = dietPlans.filter((p) => p.slug !== slug).slice(0, 3);
+  const planUrl = absoluteUrl(`/diet-plans/${plan.slug}`);
 
   return (
     <>
+      {/* Article rather than Recipe — a plan is a guide, not a dish. There is
+          no publish date in the plan data, so datePublished/dateModified are
+          omitted rather than filled with the build date. */}
+      <JsonLd
+        data={{
+          "@context": "https://schema.org",
+          "@type": "Article",
+          headline: plan.title,
+          description: plan.description,
+          image: [absoluteImage(ogImage(plan.image))],
+          url: planUrl,
+          mainEntityOfPage: { "@type": "WebPage", "@id": planUrl },
+          author: { "@id": ORGANIZATION_ID },
+          publisher: { "@id": ORGANIZATION_ID },
+          articleSection: plan.category,
+          inLanguage: "en",
+        }}
+      />
+      <JsonLd
+        data={breadcrumbJsonLd([
+          { name: "Home", path: "/" },
+          { name: "Diet Plans", path: "/diet-plans" },
+          { name: plan.title },
+        ])}
+      />
+
       <Header />
 
       {/* Hero */}

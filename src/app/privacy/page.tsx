@@ -1,13 +1,14 @@
-import type { Metadata } from "next";
 import Link from "next/link";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import { pageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
-  title: "Privacy Policy — Veganster",
+export const metadata = pageMetadata({
+  title: "Privacy Policy",
   description:
     "How Veganster collects, uses, and protects your personal information when you use our recipes, juices and smoothies, diet plans, and newsletter.",
-};
+  path: "/privacy",
+});
 
 const lastUpdated = "April 28, 2026";
 

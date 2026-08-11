@@ -6,7 +6,6 @@ export interface Recipe {
   cookTime: string;
   prepTime: string;
   servings: number;
-  rating: number;
   tags: string[];
   image: string;
   ingredients: string[];
@@ -23,7 +22,6 @@ export const recipes: Recipe[] = [
     cookTime: "25 min",
     prepTime: "15 min",
     servings: 2,
-    rating: 4.9,
     tags: ["Gluten-Free", "High Protein"],
     image:
       "https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=600&h=400&fit=crop",
@@ -60,7 +58,6 @@ export const recipes: Recipe[] = [
     cookTime: "10 min",
     prepTime: "5 min",
     servings: 2,
-    rating: 4.7,
     tags: ["Quick", "High Fiber"],
     image:
       "https://images.unsplash.com/photo-1546069901-ba9599a7e63c?w=600&h=400&fit=crop",
@@ -94,7 +91,6 @@ export const recipes: Recipe[] = [
     cookTime: "30 min",
     prepTime: "15 min",
     servings: 4,
-    rating: 4.8,
     tags: ["Nut-Free Option", "Meal Prep"],
     image:
       "https://images.unsplash.com/photo-1540914124281-342587941389?w=600&h=400&fit=crop",
@@ -131,7 +127,6 @@ export const recipes: Recipe[] = [
     cookTime: "45 min",
     prepTime: "20 min",
     servings: 4,
-    rating: 4.6,
     tags: ["Gluten-Free", "Whole Food"],
     image:
       "https://images.unsplash.com/photo-1615870216519-2f9fa575fa5c?w=600&h=400&fit=crop",
@@ -168,7 +163,6 @@ export const recipes: Recipe[] = [
     cookTime: "5 min + overnight",
     prepTime: "10 min",
     servings: 2,
-    rating: 4.8,
     tags: ["No-Cook", "Meal Prep"],
     image:
       "https://images.unsplash.com/photo-1671527281209-7b3a8dff51ce?w=600&h=400&fit=crop",
@@ -201,7 +195,6 @@ export const recipes: Recipe[] = [
     cookTime: "35 min",
     prepTime: "20 min",
     servings: 4,
-    rating: 4.9,
     tags: ["Crowd Pleaser", "Gluten-Free Option"],
     image:
       "https://images.unsplash.com/photo-1565299585323-38d6b0865b47?w=600&h=400&fit=crop",
@@ -239,7 +232,6 @@ export const recipes: Recipe[] = [
     cookTime: "15 min",
     prepTime: "15 min",
     servings: 2,
-    rating: 4.5,
     tags: ["Raw", "High Protein"],
     image:
       "https://images.unsplash.com/photo-1512058564366-18510be2db19?w=600&h=400&fit=crop",
@@ -274,7 +266,6 @@ export const recipes: Recipe[] = [
     cookTime: "40 min",
     prepTime: "15 min",
     servings: 6,
-    rating: 4.7,
     tags: ["Comfort Food", "Freezer-Friendly"],
     image:
       "https://images.unsplash.com/photo-1547592166-23ac45744acd?w=600&h=400&fit=crop",
@@ -311,7 +302,6 @@ export const recipes: Recipe[] = [
     cookTime: "10 min",
     prepTime: "5 min",
     servings: 1,
-    rating: 4.8,
     tags: ["Quick", "Superfood"],
     image:
       "https://images.unsplash.com/photo-1590301157890-4810ed352733?w=600&h=400&fit=crop",
@@ -323,7 +313,7 @@ export const recipes: Recipe[] = [
       "1 tbsp almond butter",
       "Toppings: granola, sliced banana, fresh berries",
       "Hemp seeds and chia seeds",
-      "Drizzle of honey or maple syrup",
+      "Drizzle of maple syrup",
       "Coconut flakes (optional)",
     ],
     instructions: [
@@ -332,7 +322,7 @@ export const recipes: Recipe[] = [
       "Blend on low, using the tamper to push ingredients down. The mixture should be very thick — thicker than a regular smoothie. Add milk only 1 tbsp at a time if needed.",
       "Pour the thick smoothie into a bowl and smooth the surface with a spoon.",
       "Arrange toppings in rows: sliced banana, fresh berries, granola, hemp seeds, chia seeds, and coconut flakes.",
-      "Drizzle with honey or maple syrup and serve immediately before it melts.",
+      "Drizzle with maple syrup and serve immediately before it melts.",
     ],
   },
 ];

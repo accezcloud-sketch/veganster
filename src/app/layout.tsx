@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Playfair_Display, Inter } from "next/font/google";
 import Script from "next/script";
 import GoogleAnalytics from "@/components/GoogleAnalytics";
+import { DEFAULT_SOCIAL_IMAGE, SITE_NAME, SITE_URL, ogImage } from "@/lib/seo";
 import "./globals.css";
 
 const playfair = Playfair_Display({
@@ -14,31 +15,43 @@ const inter = Inter({
   variable: "--font-inter",
 });
 
-const siteUrl =
-  process.env.NEXT_PUBLIC_SITE_URL ?? "https://www.veganster.com";
+const siteDescription =
+  "Discover delicious vegan recipes, fresh juices and smoothies, simple meal plans, and plant-based living inspiration at Veganster.";
+
+const defaultSocialImage = ogImage(DEFAULT_SOCIAL_IMAGE);
 
 export const metadata: Metadata = {
-  metadataBase: new URL(siteUrl),
+  metadataBase: new URL(SITE_URL),
   title: {
     default: "Veganster — Plant-Based Living & Wellness",
-    template: "%s — Veganster",
+    template: `%s — ${SITE_NAME}`,
   },
-  description:
-    "Discover delicious vegan recipes, fresh juices and smoothies, simple meal plans, and plant-based living inspiration at Veganster.",
+  description: siteDescription,
+  // No `alternates.canonical` here on purpose: a canonical set on the root
+  // layout is inherited by every child route, which would tell Google that
+  // every page on the site is a duplicate of the homepage. Each page sets its
+  // own. `openGraph.url` is left out for the same reason — it used to be "/",
+  // so every page reported the homepage as its Open Graph URL.
   openGraph: {
     type: "website",
-    siteName: "Veganster",
+    siteName: SITE_NAME,
     locale: "en_US",
-    url: "/",
     title: "Veganster — Plant-Based Living & Wellness",
-    description:
-      "Discover delicious vegan recipes, fresh juices and smoothies, simple meal plans, and plant-based living inspiration at Veganster.",
+    description: siteDescription,
+    images: [
+      {
+        url: defaultSocialImage,
+        width: 1200,
+        height: 630,
+        alt: "Colorful plant-based meal spread",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
     title: "Veganster — Plant-Based Living & Wellness",
-    description:
-      "Discover delicious vegan recipes, fresh juices and smoothies, simple meal plans, and plant-based living inspiration at Veganster.",
+    description: siteDescription,
+    images: [defaultSocialImage],
   },
   robots: {
     index: true,

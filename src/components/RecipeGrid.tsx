@@ -3,18 +3,9 @@
 import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { recipes, type Recipe } from "@/content/recipes";
+import { recipes } from "@/content/recipes";
 
 const categories = ["All", "Breakfast", "Bowls", "Mains", "Salads", "Soups"];
-
-function Stars({ rating }: { rating: number }) {
-  return (
-    <span className="flex items-center gap-1 text-sm text-peach font-medium">
-      {"★".repeat(Math.floor(rating))}
-      <span className="text-warm-gray-light ml-1">{rating}</span>
-    </span>
-  );
-}
 
 export default function RecipeGrid() {
   const [active, setActive] = useState("All");
@@ -69,7 +60,6 @@ export default function RecipeGrid() {
                   <span className="text-sm text-warm-gray-light">
                     {recipe.cookTime}
                   </span>
-                  <Stars rating={recipe.rating} />
                 </div>
                 <h3 className="font-[family-name:var(--font-playfair)] text-xl font-semibold text-charcoal mb-2">
                   {recipe.title}
